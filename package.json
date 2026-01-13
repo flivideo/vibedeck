@@ -1,0 +1,24 @@
+{
+  "name": "vibedeck",
+  "version": "1.0.0",
+  "description": "Tactile stream deck for Claude Code inspired by Teenage Engineering KO II",
+  "main": "index.js",
+  "workspaces": [
+    "server"
+  ],
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace=server",
+    "build": "npm run build --workspace=server",
+    "start": "npm run start --workspace=server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["stream-deck", "claude", "voice", "control"],
+  "author": "David Cruwys",
+  "license": "ISC",
+  "dependencies": {
+    "active-win": "^8.2.1"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "banks": {
+    "A": [
+      {
+        "id": "model",
+        "label": "MODEL",
+        "icon": "cpu",
+        "options": [
+          { "id": "opus", "label": "Opus", "action": { "type": "model", "model": "opus" } },
+          { "id": "sonnet", "label": "Sonnet", "action": { "type": "model", "model": "sonnet" } },
+          { "id": "haiku", "label": "Haiku", "action": { "type": "model", "model": "haiku" } },
+          { "id": "cancel", "label": "Cancel", "action": { "type": "keystroke", "text": "" } }
+        ]
+      },
+      {
+        "id": "slash",
+        "label": "SLASH",
+        "icon": "terminal",
+        "options": [
+          { "id": "clear", "label": "/clear", "action": { "type": "slash", "command": "/clear" } },
+          { "id": "compact", "label": "/compact", "action": { "type": "slash", "command": "/compact" } },
+          { "id": "review", "label": "/review", "action": { "type": "slash", "command": "/review" } },
+          { "id": "plan", "label": "/plan", "action": { "type": "slash", "command": "/plan" } },
+          { "id": "init", "label": "/init", "action": { "type": "slash", "command": "/init" } }
+        ]
+      },
+      {
+        "id": "think",
+        "label": "THINK",
+        "icon": "brain",
+        "options": [
+          { "id": "normal", "label": "Normal", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } },
+          { "id": "extended", "label": "Extended", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } },
+          { "id": "ultra", "label": "Ultrathink", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } }
+        ]
+      },
+      {
+        "id": "perm",
+        "label": "PERM",
+        "icon": "shield",
+        "options": [
+          { "id": "yes", "label": "Yes (1)", "action": { "type": "permission", "response": "1" } },
+          { "id": "always", "label": "Always (2)", "action": { "type": "permission", "response": "2" } },
+          { "id": "no", "label": "No (3)", "action": { "type": "permission", "response": "3" } }
+        ]
+      },
+      {
+        "id": "mode",
+        "label": "MODE",
+        "icon": "settings",
+        "options": [
+          { "id": "toggle-perm", "label": "Toggle Perms", "action": { "type": "combo", "key": "tab", "modifiers": ["shift"] } },
+          { "id": "yolo", "label": "Yolo Mode", "action": { "type": "keystroke", "text": "" } }
+        ]
+      },
+      {
+        "id": "launch",
+        "label": "LAUNCH",
+        "icon": "rocket",
+        "options": [
+          { "id": "new-session", "label": "New Session", "action": { "type": "keystroke", "text": "" } },
+          { "id": "continue", "label": "Continue", "action": { "type": "keystroke", "text": "" } }
+        ]
+      }
+    ],
+    "B": [
+      {
+        "id": "git",
+        "label": "GIT",
+        "icon": "git",
+        "options": [
+          { "id": "commit", "label": "/commit", "action": { "type": "slash", "command": "/commit" } },
+          { "id": "pr", "label": "/pr", "action": { "type": "slash", "command": "/pr" } },
+          { "id": "diff", "label": "/diff", "action": { "type": "slash", "command": "/diff" } }
+        ]
+      },
+      {
+        "id": "test",
+        "label": "TEST",
+        "icon": "test",
+        "options": [
+          { "id": "test", "label": "/test", "action": { "type": "slash", "command": "/test" } },
+          { "id": "build", "label": "/build", "action": { "type": "slash", "command": "/build" } },
+          { "id": "lint", "label": "/lint", "action": { "type": "slash", "command": "/lint" } }
+        ]
+      },
+      {
+        "id": "docs",
+        "label": "DOCS",
+        "icon": "book",
+        "options": [
+          { "id": "explain", "label": "/explain", "action": { "type": "slash", "command": "/explain" } },
+          { "id": "docs", "label": "/docs", "action": { "type": "slash", "command": "/docs" } }
+        ]
+      },
+      {
+        "id": "nav",
+        "label": "NAV",
+        "icon": "folder",
+        "options": [
+          { "id": "cd", "label": "/cd", "action": { "type": "slash", "command": "/cd" } },
+          { "id": "open", "label": "/open", "action": { "type": "slash", "command": "/open" } }
+        ]
+      },
+      {
+        "id": "edit",
+        "label": "EDIT",
+        "icon": "edit",
+        "options": [
+          { "id": "edit", "label": "/edit", "action": { "type": "slash", "command": "/edit" } },
+          { "id": "undo", "label": "/undo", "action": { "type": "slash", "command": "/undo" } }
+        ]
+      },
+      {
+        "id": "misc",
+        "label": "MISC",
+        "icon": "more",
+        "options": [
+          { "id": "help", "label": "/help", "action": { "type": "slash", "command": "/help" } },
+          { "id": "config", "label": "/config", "action": { "type": "slash", "command": "/config" } }
+        ]
+      }
+    ],
+    "C": [
+      {
+        "id": "agent-1",
+        "label": "AGENT",
+        "icon": "user",
+        "options": [
+          { "id": "task", "label": "Task Agent", "action": { "type": "slash", "command": "/agent task" } },
+          { "id": "research", "label": "Research", "action": { "type": "slash", "command": "/agent research" } }
+        ]
+      },
+      {
+        "id": "agent-2",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "agent-3",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "agent-4",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "agent-5",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "agent-6",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      }
+    ],
+    "D": [
+      {
+        "id": "prompt-1",
+        "label": "PROMPT",
+        "icon": "message",
+        "options": []
+      },
+      {
+        "id": "prompt-2",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "prompt-3",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "prompt-4",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "prompt-5",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      },
+      {
+        "id": "prompt-6",
+        "label": "EMPTY",
+        "icon": "plus",
+        "options": []
+      }
+    ]
+  },
+  "actionButtons": {
+    "accept": { "type": "keystroke", "text": " " },
+    "enter": { "type": "combo", "key": "return", "modifiers": [] },
+    "discard": { "type": "combo", "key": "escape", "modifiers": [] }
+  },
+  "preferences": {
+    "terminal": "terminal",
+    "defaultModel": "sonnet",
+    "whisperModel": "base"
+  },
+  "storedPrompts": []
+}

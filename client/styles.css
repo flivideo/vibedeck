@@ -1,0 +1,489 @@
+/* VibeDeck - KO II Inspired Design */
+/* Black (#000000) + Orange (#FF5500) color palette */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', 'Courier', monospace;
+  background: linear-gradient(135deg, #1a0033 0%, #000033 100%);
+  color: #ffffff;
+  overflow: hidden;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ============================================================================
+   Header
+   ============================================================================ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  letter-spacing: 4px;
+  font-weight: bold;
+}
+
+.header .version {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-left: 10px;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+}
+
+.status-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #666;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.connected {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ============================================================================
+   Main Layout
+   ============================================================================ */
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr 100px;
+  gap: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ============================================================================
+   Status Panel (Left)
+   ============================================================================ */
+
+.status-panel {
+  background: #000000;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.status-item .label {
+  color: #888;
+}
+
+.status-item .value {
+  color: #FF5500;
+  font-weight: bold;
+}
+
+.divider {
+  height: 1px;
+  background: #333;
+}
+
+.section-label {
+  font-size: 12px;
+  color: #FF5500;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.options-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.options-section .options-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.options-section .option {
+  padding: 12px 15px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.options-section .option:hover {
+  border-color: #FF5500;
+  background: #2a1100;
+}
+
+.options-section .option.selected {
+  border-color: #FF5500;
+  background: #FF5500;
+  color: #000;
+  font-weight: bold;
+}
+
+.transcription-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.transcription-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #ccc;
+  min-height: 100px;
+}
+
+.terminal-section .terminal-status {
+  font-size: 14px;
+  color: #666;
+  font-weight: bold;
+}
+
+.terminal-section .terminal-status.connected {
+  color: #00ff00;
+}
+
+/* ============================================================================
+   Pad Area (Center)
+   ============================================================================ */
+
+.pad-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad-grid {
+  position: relative;
+  width: 650px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pad {
+  position: absolute;
+  background: #1a1a1a;
+  border: 3px solid #333;
+  border-radius: 12px;
+  padding: 25px 35px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  min-width: 140px;
+}
+
+/* Position pads around dial in cross pattern */
+.pad-0 { top: 0; left: 50%; transform: translateX(-50%); } /* MODEL - top center */
+.pad-1 { top: 50%; right: 0; transform: translateY(-50%); } /* SLASH - right center */
+.pad-2 { top: 50%; left: 0; transform: translateY(-50%); } /* LAUNCH - left center */
+.pad-3 { bottom: 0; right: 0; } /* THINK - bottom right */
+.pad-4 { bottom: 0; left: 0; } /* MODE - bottom left */
+.pad-5 { top: 0; right: 0; } /* PERM - top right */
+
+.pad:hover {
+  border-color: #FF5500;
+  transform: translateX(-50%) scale(1.05); /* Adjust for positioned pads */
+}
+
+.pad-1:hover, .pad-2:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.pad-3:hover, .pad-4:hover, .pad-5:hover {
+  transform: scale(1.05);
+}
+
+.pad:active {
+  transform: scale(0.95);
+}
+
+.pad.selected {
+  border-color: #FF5500;
+  background: #2a1100;
+  box-shadow: 0 0 20px rgba(255, 85, 0, 0.3);
+}
+
+.pad-label {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.pad-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* ============================================================================
+   Dial Controller (in center of pad grid)
+   ============================================================================ */
+
+.dial-controller {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.dial {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 4px solid #333;
+  position: relative;
+  transition: transform 0.1s ease-out;
+  cursor: grab;
+}
+
+.dial:active {
+  cursor: grabbing;
+}
+
+.dial-indicator {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 40px;
+  background: #FF5500;
+  border-radius: 2px;
+}
+
+.dial-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #333;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dial-center:hover {
+  background: #FF5500;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.dial-center:active {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.dial-center.clicked {
+  animation: clickPulse 0.3s ease;
+}
+
+@keyframes clickPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* ============================================================================
+   Bank Selector (Right)
+   ============================================================================ */
+
+.bank-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 10px;
+}
+
+.bank-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.bank-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bank-btn {
+  width: 60px;
+  height: 60px;
+  border: 3px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.bank-btn:hover {
+  border-color: #FF5500;
+}
+
+.bank-btn.active {
+  background: #FF5500;
+  border-color: #FF5500;
+  color: #000;
+}
+
+/* ============================================================================
+   Action Bar (Bottom)
+   ============================================================================ */
+
+.action-bar {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.action-btn {
+  padding: 20px;
+  border: 3px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.action-btn:hover {
+  border-color: #FF5500;
+  transform: scale(1.05);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.action-btn.accept {
+  background: #FF5500;
+  border-color: #FF5500;
+  color: #000;
+}
+
+.action-btn.accept:hover {
+  background: #ff6622;
+  border-color: #ff6622;
+}
+
+.action-btn.mic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.action-btn.mic.recording {
+  background: #FF5500;
+  border-color: #FF5500;
+  animation: recordPulse 1s infinite;
+}
+
+.mic-icon {
+  font-size: 20px;
+}
+
+.mic-label {
+  font-size: 12px;
+}
+
+@keyframes recordPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* No modal overlay needed - options show in left panel */
+
+/* ============================================================================
+   Scrollbar
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5500;
+}

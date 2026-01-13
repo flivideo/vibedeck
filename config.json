@@ -1,0 +1,90 @@
+{
+  "banks": {
+    "A": [
+      {
+        "id": "model",
+        "label": "MODEL",
+        "icon": "cpu",
+        "options": [
+          { "id": "opus", "label": "Opus", "action": { "type": "model", "model": "opus" } },
+          { "id": "sonnet", "label": "Sonnet", "action": { "type": "model", "model": "sonnet" } },
+          { "id": "haiku", "label": "Haiku", "action": { "type": "model", "model": "haiku" } },
+          { "id": "cancel", "label": "Cancel", "action": { "type": "keystroke", "text": "" } }
+        ]
+      },
+      {
+        "id": "slash",
+        "label": "SLASH",
+        "icon": "terminal",
+        "options": [
+          { "id": "clear", "label": "/clear", "action": { "type": "slash", "command": "/clear" } },
+          { "id": "compact", "label": "/compact", "action": { "type": "slash", "command": "/compact" } },
+          { "id": "review", "label": "/review", "action": { "type": "slash", "command": "/review" } },
+          { "id": "plan", "label": "/plan", "action": { "type": "slash", "command": "/plan" } }
+        ]
+      },
+      {
+        "id": "think",
+        "label": "THINK",
+        "icon": "brain",
+        "options": [
+          { "id": "normal", "label": "Normal", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } },
+          { "id": "extended", "label": "Extended", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } },
+          { "id": "ultra", "label": "Ultra", "action": { "type": "combo", "key": "t", "modifiers": ["option"] } }
+        ]
+      },
+      {
+        "id": "perm",
+        "label": "PERM",
+        "icon": "shield",
+        "options": [
+          { "id": "yes", "label": "Yes (1)", "action": { "type": "permission", "response": "1" } },
+          { "id": "always", "label": "Always (2)", "action": { "type": "permission", "response": "2" } },
+          { "id": "no", "label": "No (3)", "action": { "type": "permission", "response": "3" } }
+        ]
+      },
+      {
+        "id": "mode",
+        "label": "MODE",
+        "icon": "settings",
+        "options": [
+          { "id": "toggle-perm", "label": "Toggle Perms", "action": { "type": "combo", "key": "tab", "modifiers": ["shift"] } }
+        ]
+      },
+      {
+        "id": "launch",
+        "label": "LAUNCH",
+        "icon": "rocket",
+        "options": [
+          { "id": "new-session", "label": "New Session", "action": { "type": "keystroke", "text": "" } }
+        ]
+      }
+    ],
+    "B": [
+      {
+        "id": "fnkey",
+        "label": "FN",
+        "icon": "keyboard",
+        "options": [
+          { "id": "fn-press", "label": "Fn Key", "action": { "type": "combo", "key": "fn", "modifiers": [] } },
+          { "id": "fn-e", "label": "Fn+E (Emoji)", "action": { "type": "combo", "key": "e", "modifiers": ["fn"] } },
+          { "id": "fn-f1", "label": "Fn+F1", "action": { "type": "combo", "key": "f1", "modifiers": ["fn"] } },
+          { "id": "fn-f2", "label": "Fn+F2", "action": { "type": "combo", "key": "f2", "modifiers": ["fn"] } }
+        ]
+      }
+    ],
+    "C": [],
+    "D": []
+  },
+  "actionButtons": {
+    "accept": { "type": "keystroke", "text": " " },
+    "enter": { "type": "combo", "key": "return", "modifiers": [] },
+    "discard": { "type": "combo", "key": "escape", "modifiers": [] }
+  },
+  "preferences": {
+    "terminal": "terminal",
+    "defaultModel": "sonnet",
+    "whisperModel": "base"
+  },
+  "storedPrompts": []
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeDeck v1.0</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <h1>VIBEDECK <span class="version">v1.0</span></h1>
+      <div class="connection-status">
+        <span class="status-dot" id="status-dot"></span>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Left Panel: Status & Transcription -->
+      <aside class="status-panel">
+        <div class="status-section">
+          <div class="status-item">
+            <span class="label">MODEL:</span>
+            <span class="value" id="model-value">SONNET</span>
+          </div>
+          <div class="status-item">
+            <span class="label">BANK:</span>
+            <span class="value" id="bank-value">A</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="options-section" id="options-section">
+          <div class="section-label" id="options-label">SELECT OPTION:</div>
+          <ul class="options-list" id="options-list">
+            <!-- Options will appear here when pad is clicked -->
+          </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="transcription-section">
+          <div class="section-label">TRANSCRIBED:</div>
+          <div class="transcription-text" id="transcription-text">
+            <!-- Transcription will appear here -->
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="terminal-section">
+          <div class="section-label">TERMINAL:</div>
+          <div class="terminal-status" id="terminal-status">
+            NOT CONNECTED
+          </div>
+        </div>
+      </aside>
+
+      <!-- Center: Pad Grid with Dial in middle -->
+      <main class="pad-area">
+        <div class="pad-grid" id="pad-grid">
+          <!-- Pads will be rendered here -->
+          <!-- Pad positions: -->
+          <!-- [0] [1] -->
+          <!-- [2] DIAL [3] -->
+          <!-- [4] [5] -->
+
+          <!-- Rotary Dial Controller (in center) -->
+          <div class="dial-controller" id="dial-controller">
+            <div class="dial">
+              <div class="dial-indicator"></div>
+            </div>
+            <button class="dial-center" id="dial-center">⚪</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right: Bank Selector -->
+      <aside class="bank-selector">
+        <div class="bank-label">BANK</div>
+        <div class="bank-buttons">
+          <button class="bank-btn active" data-bank="A">A</button>
+          <button class="bank-btn" data-bank="B">B</button>
+          <button class="bank-btn" data-bank="C">C</button>
+          <button class="bank-btn" data-bank="D">D</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Bottom: Action Buttons -->
+    <footer class="action-bar">
+      <button class="action-btn" id="esc-btn">ESC</button>
+      <button class="action-btn accept" id="accept-btn">ACCEPT</button>
+      <button class="action-btn" id="enter-btn">ENTER</button>
+      <button class="action-btn mic" id="mic-btn">
+        <span class="mic-icon">⚪</span>
+        <span class="mic-label">MIC</span>
+      </button>
+    </footer>
+
+    <!-- No modal overlay - options show in left panel -->
+  </div>
+
+  <!-- Socket.IO Client -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- App Scripts (ES6 Modules) -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
