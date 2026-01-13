@@ -21,6 +21,15 @@ const DEFAULT_CONFIG_FILE = path.join(__dirname, '../../docs/default-config.json
 const app = express();
 const httpServer = createServer(app);
 
+// Track active connections for clean shutdown
+const connections = new Set<any>();
+httpServer.on('connection', (conn) => {
+  connections.add(conn);
+  conn.on('close', () => {
+    connections.delete(conn);
+  });
+});
+
 // Initialize Socket.IO with typed events
 const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   cors: {
@@ -153,7 +162,7 @@ io.on('connection', (socket) => {
   });
 });
 
-// Graceful shutdown
+// Graceful shutdown - handles SIGTERM/SIGINT cleanly
 let isShuttingDown = false;
 
 async function gracefulShutdown(signal: string) {
@@ -189,12 +198,26 @@ async function gracefulShutdown(signal: string) {
       });
     });
 
+    // Destroy all active connections
+    console.log(`Destroying ${connections.size} active connections...`);
+    connections.forEach((conn) => {
+      conn.destroy();
+    });
+    connections.clear();
+
     // Close HTTP server
     console.log('Closing HTTP server...');
-    await new Promise<void>((resolve, reject) => {
+    await new Promise<void>((resolve) => {
       httpServer.close((err) => {
         if (err) {
-          reject(err);
+          // Ignore "Server is not running" error (happens after destroying connections)
+          if ((err as NodeJS.ErrnoException).code === 'ERR_SERVER_NOT_RUNNING') {
+            console.log('HTTP server already closed');
+            resolve();
+          } else {
+            console.error('Error closing HTTP server:', err.message);
+            resolve(); // Resolve anyway to continue shutdown
+          }
         } else {
           console.log('HTTP server closed');
           resolve();
