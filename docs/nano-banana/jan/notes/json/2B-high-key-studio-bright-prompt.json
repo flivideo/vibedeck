@@ -1,0 +1,166 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "catalog_shot_2B",
+    "custom_instruction": "CI-06: High-Key Studio Bright"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0"}
+        ]
+      }
+    ]
+  },
+  "lighting": {
+    "style": "High-key studio lighting - bright, airy, optimistic catalog photography",
+    "primary_light": {
+      "type": "large softbox key light",
+      "position": "45 degrees from upper left, large source",
+      "intensity": "high",
+      "softness": "very soft, large diffusion panel",
+      "color_temperature": "6000K bright daylight"
+    },
+    "fill_light": {
+      "type": "large reflector or softbox fill",
+      "position": "right side, nearly matching key light intensity",
+      "intensity": "medium-high (high-key approach)",
+      "softness": "very soft",
+      "purpose": "lift all shadows, create bright airy feeling with minimal contrast"
+    },
+    "rim_light": {
+      "type": "soft rim light",
+      "position": "behind and above",
+      "intensity": "medium",
+      "purpose": "gentle edge definition without harsh lines"
+    },
+    "practical_lights": {
+      "oled_display": "matrix green glow (#00FF00), soft and visible",
+      "button_backlighting": "colorful button lights clearly visible - green, red, orange, cyan, blue, purple",
+      "rotary_underglow": "cyan blue halo (#4A9EFF), medium visibility"
+    }
+  },
+  "composition": {
+    "camera_angle": "straight-on with slight 3/4 rotation (15 degrees), slightly from above (10 degrees)",
+    "camera_height": "10 degrees above product eye-level",
+    "camera_distance": "close-up hero shot, product fills 70% of frame",
+    "focal_point": "entire product evenly, no single dominant feature",
+    "framing": "centered with balanced negative space all around",
+    "negative_space": "35% light gray/white space, evenly distributed",
+    "depth_of_field": "f/8 - entire product sharp, background slightly soft",
+    "lens": "85mm portrait lens for natural, flattering perspective"
+  },
+  "surface": {
+    "type": "light gray or white seamless backdrop",
+    "color": "#E8E8E8",
+    "texture": "smooth, barely visible texture",
+    "finish": "matte, very subtle surface",
+    "lighting_interaction": "gentle shadows (very soft), product appears grounded but light"
+  },
+  "background": {
+    "type": "light gray gradient to white",
+    "depth": "infinite backdrop, no visible horizon",
+    "content": "nothing - clean studio environment",
+    "colors": "#E8E8E8 to #FFFFFF gradient",
+    "blur_amount": "slight softness - not sharp but not heavily blurred",
+    "mood": "clean, professional, catalog-ready, optimistic"
+  },
+  "props": [],
+  "effects": {
+    "glow": {
+      "description": "Practical lights from device create gentle colorful ambiance",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "soft glow on light gray surface"
+        },
+        {
+          "source": "colorful button backlights",
+          "color": "multi-colored (green, red, orange, cyan, blue, purple)",
+          "spread": "subtle colorful reflections on surface"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "very subtle, soft shadow with hint of reflection",
+      "ambient_reflections": "minimal - high-key lighting reduces contrast",
+      "specular_highlights": "soft highlights on brushed aluminum, not harsh"
+    },
+    "depth_of_field": {
+      "focal_plane": "entire product in focus",
+      "bokeh_style": "gentle softness in background",
+      "blur_gradient": "minimal blur, high-key style keeps everything relatively sharp"
+    },
+    "atmospheric": []
+  },
+  "style_reference": {
+    "aesthetic": "Bright, airy catalog photography - professional but approachable",
+    "reference_brands": ["Professional catalog photography", "E-commerce product shots (elevated)", "Tech product press photos"],
+    "photography_style": "high-key studio, bright and inviting, colors accurate, optimistic tone",
+    "mood": "professional, trustworthy, bright future, positive energy"
+  },
+  "mood": "This product brings clarity and brightness to your workflow - professional, capable, and refreshingly straightforward",
+  "negative_prompt": "dark, moody, heavy shadows, dramatic contrast, low-key lighting, cluttered, props, grungy, dim, mysterious, overly artistic",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

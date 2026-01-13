@@ -1,0 +1,188 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "hero_shot_1B",
+    "custom_instruction": "CI-02: Cyberpunk Noir"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font",
+        "glow_intensity": "high - vibrant matrix green"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF",
+        "glow_intensity": "high - bright cyan halo"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "glow_intensity": "high - visible light bleeding",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50", "glow": "strong"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336", "glow": "strong"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800", "glow": "strong"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u", "glow": "strong"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3", "glow": "strong"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0", "glow": "strong"}
+        ]
+      }
+    ]
+  },
+  "lighting": {
+    "style": "cyberpunk noir - high contrast, neon-heavy, dramatic shadows",
+    "primary_light": {
+      "type": "key light",
+      "position": "45 degrees from upper left, hard edge",
+      "intensity": "medium",
+      "softness": "hard light, defined shadows",
+      "color_temperature": "4500K cool white with slight blue tint"
+    },
+    "fill_light": {
+      "type": "minimal fill",
+      "position": "right side, low intensity",
+      "intensity": "very low",
+      "softness": "diffused",
+      "purpose": "preserve deep shadows, maintain mystery"
+    },
+    "rim_light": {
+      "type": "colored rim light",
+      "position": "behind and to the right",
+      "intensity": "medium-high",
+      "color": "#FF00FF magenta",
+      "purpose": "cyberpunk neon edge definition, separate from dark background"
+    },
+    "practical_lights": {
+      "oled_display": "intense matrix green glow (#00FF00) creating strong light pool on surface",
+      "button_backlighting": "cyan blue underglow (#4A9EFF) highly visible, light rays through key gaps",
+      "rotary_underglow": "cyan blue halo (#4A9EFF) creating dramatic ring of light on surface",
+      "additional_neon": "purple/magenta accent light (#FF00FF) from rim position"
+    }
+  },
+  "composition": {
+    "camera_angle": "low angle 3/4 view from slightly below eye level",
+    "camera_height": "5-10 degrees below product, looking up slightly",
+    "camera_distance": "close-up hero shot, product fills 70% of frame",
+    "focal_point": "rotary encoder with cyan underglow",
+    "framing": "product dominates frame, slight asymmetry for tension",
+    "negative_space": "20% dark space upper right",
+    "depth_of_field": "f/2.8 - display and encoder sharp, background heavily blurred",
+    "lens": "35mm wide angle for slight drama"
+  },
+  "surface": {
+    "type": "wet black asphalt or dark metal with reflective sheen",
+    "color": "#0A0A0A",
+    "texture": "smooth with very subtle texture, appears wet",
+    "finish": "glossy, reflective",
+    "lighting_interaction": "strong neon reflections from device lights, cyan and green pools of light"
+  },
+  "background": {
+    "type": "dark urban environment, heavily blurred",
+    "depth": "5-8 feet behind product",
+    "content": "suggestions of rain-slicked city - neon signs (out of focus), wet surfaces, vertical light streaks",
+    "colors": "deep blacks (#000000), dark blues (#0D1B2A), purple hints (#4A1942), cyan accents (#00FFFF)",
+    "blur_amount": "heavy blur (bokeh), circular light bokeh from distant neon signs",
+    "mood": "dystopian future, night city, underground tech"
+  },
+  "props": [
+    {
+      "id": "neon_reflections",
+      "item": "suggestion of off-screen neon lights",
+      "position": "background, out of focus",
+      "visibility": "color wash only, bokeh circles",
+      "purpose": "cyberpunk atmosphere"
+    }
+  ],
+  "effects": {
+    "glow": {
+      "description": "strong neon glow from all device lights",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "wide, creating green light pool on wet surface"
+        },
+        {
+          "source": "rotary underglow",
+          "color": "#4A9EFF",
+          "spread": "wide ring, reflecting on surface"
+        },
+        {
+          "source": "button backlights",
+          "color": "multiple colors",
+          "spread": "medium, individual color halos"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "strong - device reflects in wet surface below",
+      "ambient_reflections": "neon colors reflecting in device housing",
+      "specular_highlights": "bright cyan and magenta highlights on aluminum encoder"
+    },
+    "depth_of_field": {
+      "focal_plane": "rotary encoder and display",
+      "bokeh_style": "circular bokeh from distant neon lights",
+      "blur_gradient": "rapid falloff to blur"
+    },
+    "atmospheric": [
+      "subtle haze in air",
+      "light rays from neon underglow visible in haze",
+      "possible rain droplets on surface catching light"
+    ]
+  },
+  "style_reference": {
+    "aesthetic": "Blade Runner meets cyberpunk street tech - neon noir, high tech low life",
+    "reference_brands": ["Cyberpunk 2077 art direction", "Ghost in the Shell aesthetics", "Blade Runner 2049 color grading"],
+    "photography_style": "cinematic noir with neon accents, dramatic contrast",
+    "mood": "dark, mysterious, futuristic underground, hacker aesthetic"
+  },
+  "mood": "This device exists in a rain-soaked cyberpunk future where code is power and night is eternal",
+  "negative_prompt": "bright lighting, daylight, clean backgrounds, minimal style, flat lighting, pastel colors, soft shadows, happy mood, corporate aesthetic",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "technical_shot_2C",
+    "custom_instruction": "CI-09: Isometric Technical"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center - geometric precision visible",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom - aligned parallel to front edge",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0"}
+        ]
+      },
+      {
+        "id": "coiled_cable",
+        "type": "USB-C cable",
+        "position": "left side, coiled cable partially visible",
+        "color": "#4A4A4A",
+        "details": "retro coiled design, geometric coil pattern visible"
+      }
+    ]
+  },
+  "lighting": {
+    "style": "Technical architectural lighting - even, clinical, reveals geometric form",
+    "primary_light": {
+      "type": "key light",
+      "position": "45 degrees from upper left front",
+      "intensity": "medium-high",
+      "softness": "moderately diffused - some shadows for depth",
+      "color_temperature": "5500K neutral white"
+    },
+    "fill_light": {
+      "type": "fill light",
+      "position": "right side, balanced",
+      "intensity": "medium",
+      "softness": "diffused",
+      "purpose": "maintain even lighting while preserving geometric shadows"
+    },
+    "rim_light": {
+      "type": "edge light",
+      "position": "behind and above, defining edges",
+      "intensity": "medium",
+      "purpose": "emphasize geometric edges and device boundaries"
+    },
+    "practical_lights": {
+      "oled_display": "matrix green glow (#00FF00), medium intensity",
+      "button_backlighting": "cyan blue and colored backlights clearly visible",
+      "rotary_underglow": "cyan blue halo (#4A9EFF), medium visibility"
+    }
+  },
+  "composition": {
+    "camera_angle": "isometric-style 30-35 degrees from above, slightly offset to show depth",
+    "camera_height": "30-35 degrees above horizontal plane",
+    "camera_distance": "medium close-up, product fills 65% of frame",
+    "focal_point": "entire device equally - all components should be clearly visible",
+    "framing": "centered, with geometric spacing around device",
+    "negative_space": "35% neutral background, symmetrically distributed",
+    "depth_of_field": "f/11-f/16 - everything sharp, technical documentation style",
+    "lens": "85mm with perspective correction to emphasize isometric feel"
+  },
+  "surface": {
+    "type": "neutral gray surface with subtle grid pattern",
+    "color": "#666666",
+    "texture": "very subtle grid lines or graph paper texture (faint, not distracting)",
+    "finish": "matte with barely visible geometric pattern",
+    "lighting_interaction": "clean shadows with geometric edges, slight reflections"
+  },
+  "background": {
+    "type": "light gray with subtle grid or technical blueprint texture",
+    "depth": "flat plane transitioning to vertical backdrop",
+    "content": "very faint grid pattern or blueprint-style lines (barely visible, not busy)",
+    "colors": "#D0D0D0 to #E8E8E8 gradient",
+    "blur_amount": "sharp - technical documentation style",
+    "mood": "clinical, architectural, precise, engineering documentation"
+  },
+  "props": [],
+  "effects": {
+    "glow": {
+      "description": "Practical lights create technical-looking illumination",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "medium glow on gray surface, geometric spread"
+        },
+        {
+          "source": "button backlights",
+          "color": "multi-colored",
+          "spread": "clean geometric glow patterns"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "subtle geometric shadow, clean edges",
+      "ambient_reflections": "minimal, technical style",
+      "specular_highlights": "controlled highlights showing material quality"
+    },
+    "depth_of_field": {
+      "focal_plane": "entire product sharp - technical documentation requires full focus",
+      "bokeh_style": "not applicable",
+      "blur_gradient": "none - everything sharp"
+    },
+    "atmospheric": []
+  },
+  "style_reference": {
+    "aesthetic": "Technical product documentation, architectural precision, engineering drawings brought to 3D",
+    "reference_brands": ["CAD rendering style", "Technical product manuals", "Industrial design presentations", "Kickstarter technical specification images"],
+    "photography_style": "isometric-inspired, geometric precision, clinical accuracy, architectural",
+    "mood": "precision engineering, technical excellence, professional documentation"
+  },
+  "mood": "Every component has its place - this is precision engineering made visible through geometric clarity",
+  "negative_prompt": "dramatic artistic lighting, heavy shadows, blurred background, cluttered, messy, organic shapes, irregular lighting, lens distortion, wide angle distortion",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

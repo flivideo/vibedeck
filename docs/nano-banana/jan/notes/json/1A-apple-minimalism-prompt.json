@@ -1,0 +1,160 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "hero_shot_1A",
+    "custom_instruction": "CI-01: Apple Minimalism"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0"}
+        ]
+      }
+    ]
+  },
+  "lighting": {
+    "style": "Apple-style pristine product photography",
+    "primary_light": {
+      "type": "key light",
+      "position": "directly above, slightly forward",
+      "intensity": "high",
+      "softness": "extremely diffused, shadowless",
+      "color_temperature": "6500K pure daylight"
+    },
+    "fill_light": {
+      "type": "360-degree fill",
+      "position": "surrounding the product from all sides",
+      "intensity": "high",
+      "softness": "completely diffused",
+      "purpose": "eliminate all shadows, create floating effect"
+    },
+    "rim_light": {
+      "type": "none - minimalist approach",
+      "intensity": "none",
+      "purpose": "no edge definition needed in this style"
+    },
+    "practical_lights": {
+      "oled_display": "subtle matrix green glow (#00FF00), very soft",
+      "button_backlighting": "cyan blue underglow (#4A9EFF), minimal visibility",
+      "rotary_underglow": "cyan blue halo (#4A9EFF), subtle presence"
+    }
+  },
+  "composition": {
+    "camera_angle": "straight-on with subtle 3/4 rotation (10 degrees from center)",
+    "camera_height": "eye-level to product, no dramatic angles",
+    "camera_distance": "close-up hero shot, product fills 65% of frame",
+    "focal_point": "rotary encoder and display, centered",
+    "framing": "perfectly centered with balanced negative space",
+    "negative_space": "40% white space, symmetrically distributed",
+    "depth_of_field": "f/11 - everything in perfect focus, no blur",
+    "lens": "85mm portrait lens for natural perspective"
+  },
+  "surface": {
+    "type": "pure white seamless infinity background",
+    "color": "#FFFFFF",
+    "texture": "perfectly smooth, no visible texture",
+    "finish": "matte, zero reflections",
+    "lighting_interaction": "no shadows, product appears to float"
+  },
+  "background": {
+    "type": "solid white infinity cyc wall",
+    "depth": "infinite, no visible horizon line",
+    "content": "nothing - pure emptiness",
+    "colors": "#FFFFFF",
+    "blur_amount": "not applicable - solid white",
+    "mood": "zen, minimalist, premium"
+  },
+  "props": [],
+  "effects": {
+    "glow": {
+      "description": "minimal practical light glow from device",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "tight, barely visible on white surface"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "none - matte white surface",
+      "ambient_reflections": "none",
+      "specular_highlights": "minimal, only on brushed aluminum encoder"
+    },
+    "depth_of_field": {
+      "focal_plane": "entire product in focus",
+      "bokeh_style": "not applicable",
+      "blur_gradient": "none"
+    },
+    "atmospheric": []
+  },
+  "style_reference": {
+    "aesthetic": "Apple product photography - extreme minimalism, perfect balance, zen simplicity",
+    "reference_brands": ["Apple product shots (iPhone, AirPods Pro)", "Premium minimalist catalog photography"],
+    "photography_style": "clinical perfection, floating product, no distractions",
+    "mood": "calm, sophisticated, premium without trying"
+  },
+  "mood": "This device is so confident in its design that it needs nothing else - pure, minimal, perfect",
+  "negative_prompt": "shadows, clutter, props, background elements, dramatic lighting, harsh contrast, lens flare, grain, texture in background, colored backgrounds, reflections, messy, busy composition",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

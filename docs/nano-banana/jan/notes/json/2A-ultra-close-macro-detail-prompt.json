@@ -1,0 +1,161 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "detail_shot_2A",
+    "custom_instruction": "CI-04: Ultra-Close Macro Detail"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device - extreme close-up view",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center of frame - PRIMARY FOCUS",
+        "material": "brushed aluminum",
+        "texture": "knurled edge with visible machining marks and texture detail",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF",
+        "details": "Every groove, every texture line should be visible. Brushed metal pattern clearly shown. Center button slightly recessed."
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": "2-3 visible in frame",
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "close surrounding rotary",
+        "keycaps": "low-profile, matte black with slight texture",
+        "legends": "white text, sharp and crisp",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 2", "CTX 3", "CTX 5 visible"],
+        "details": "Keycap texture visible, legend printing quality clear, subtle reflections on plastic"
+      },
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "upper background, out of focus but visible",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font",
+        "focus": "blurred background element, adds context"
+      }
+    ]
+  },
+  "lighting": {
+    "style": "Macro photography studio lighting - reveal every texture",
+    "primary_light": {
+      "type": "key light",
+      "position": "45 degrees from upper left, close to subject",
+      "intensity": "high",
+      "softness": "slightly diffused to show texture without harsh shadows",
+      "color_temperature": "5500K neutral white"
+    },
+    "fill_light": {
+      "type": "fill light",
+      "position": "right side, lower intensity",
+      "intensity": "medium-low",
+      "softness": "diffused",
+      "purpose": "lift shadows while maintaining depth and texture visibility"
+    },
+    "rim_light": {
+      "type": "rim light",
+      "position": "behind and above, grazing the surface",
+      "intensity": "medium",
+      "purpose": "edge definition on rotary encoder, emphasize circular shape and knurling"
+    },
+    "practical_lights": {
+      "rotary_underglow": "cyan blue halo (#4A9EFF) clearly visible around base, medium intensity",
+      "button_backlighting": "cyan blue glow (#4A9EFF) visible through keycaps",
+      "oled_display": "matrix green glow (#00FF00) soft in background"
+    }
+  },
+  "composition": {
+    "camera_angle": "3/4 view from slightly above (20 degrees), looking down at rotary encoder",
+    "camera_height": "20 degrees above subject",
+    "camera_distance": "MACRO - extreme close-up, rotary encoder fills 70% of frame",
+    "focal_point": "center of rotary encoder knob, specifically the knurled texture",
+    "framing": "rotary encoder dominates frame, context buttons partially visible at edges, display blurred in background",
+    "negative_space": "minimal - tight crop focused on detail",
+    "depth_of_field": "f/2.8 - very shallow, rotary encoder sharp, buttons slightly soft, display blurred",
+    "lens": "100mm macro lens for extreme detail and texture capture"
+  },
+  "surface": {
+    "type": "dark wood developer desk",
+    "color": "#3E2723",
+    "texture": "subtle wood grain visible but blurred",
+    "finish": "matte with slight natural wood texture",
+    "lighting_interaction": "subtle reflections from underglow, wood grain adds warmth"
+  },
+  "background": {
+    "type": "blurred developer environment",
+    "depth": "2-3 feet behind product",
+    "content": "hints of mechanical keyboard (blurred), monitor glow (soft and out of focus)",
+    "colors": "dark browns, blacks, hints of warm light",
+    "blur_amount": "heavy blur (bokeh) - background provides context but stays out of focus",
+    "mood": "developer workspace context without distraction"
+  },
+  "props": [
+    {
+      "id": "coiled_cable",
+      "item": "retro coiled USB-C cable",
+      "position": "left side, partially visible, slightly out of focus",
+      "visibility": "10-20% visible, blurred",
+      "purpose": "adds authenticity and scale reference"
+    }
+  ],
+  "effects": {
+    "glow": {
+      "description": "Practical lights create visible glow on nearby surfaces",
+      "sources": [
+        {
+          "source": "rotary encoder underglow",
+          "color": "#4A9EFF",
+          "spread": "tight halo visible on desk surface below"
+        },
+        {
+          "source": "button backlighting",
+          "color": "#4A9EFF",
+          "spread": "soft glow through keycap material"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "minimal on matte wood desk",
+      "ambient_reflections": "subtle room light reflections on brushed aluminum",
+      "specular_highlights": "bright highlights on knurled metal texture - this is key for showing detail"
+    },
+    "depth_of_field": {
+      "focal_plane": "rotary encoder surface - perfectly sharp",
+      "bokeh_style": "circular, smooth, professional lens bokeh",
+      "blur_gradient": "rapid falloff - sharp center, soft edges, blurred background"
+    },
+    "atmospheric": []
+  },
+  "style_reference": {
+    "aesthetic": "Professional macro product photography - texture and craftsmanship focus",
+    "reference_brands": ["Watch photography (showing dial detail)", "Hi-fi equipment close-ups (volume knobs)", "Premium audio gear macro shots"],
+    "photography_style": "detail-oriented, shows quality of materials and manufacturing precision",
+    "mood": "craftsmanship, precision engineering, premium materials"
+  },
+  "mood": "Look at the quality - every texture, every detail speaks to precision engineering and premium craftsmanship",
+  "negative_prompt": "flat lighting, no texture detail, soft focus on main subject, cluttered background, harsh shadows obscuring detail, over-processed, too bright, washed out",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

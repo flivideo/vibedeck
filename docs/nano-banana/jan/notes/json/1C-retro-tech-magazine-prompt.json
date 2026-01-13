@@ -1,0 +1,200 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "hero_shot_1C",
+    "custom_instruction": "CI-03: Retro-Tech Magazine Editorial"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0"}
+        ]
+      },
+      {
+        "id": "coiled_cable",
+        "type": "USB-C coiled cable",
+        "style": "retro telephone cord",
+        "color": "dark gray",
+        "length_visible": "8 inches of coil",
+        "position": "connected to left side, coiling naturally on desk"
+      }
+    ]
+  },
+  "lighting": {
+    "style": "warm 1980s-90s editorial photography, tungsten film aesthetic",
+    "primary_light": {
+      "type": "key light",
+      "position": "45 degrees from upper left, slightly softer",
+      "intensity": "medium-high",
+      "softness": "umbrella diffused",
+      "color_temperature": "3200K tungsten warm"
+    },
+    "fill_light": {
+      "type": "fill light",
+      "position": "right side",
+      "intensity": "medium",
+      "softness": "bounced warm light",
+      "purpose": "soft shadows, readable detail in shadow areas"
+    },
+    "rim_light": {
+      "type": "warm rim light",
+      "position": "behind and slightly to the right",
+      "intensity": "medium",
+      "color_temperature": "2700K warm tungsten",
+      "purpose": "nostalgic warm edge glow, separate from background"
+    },
+    "practical_lights": {
+      "oled_display": "matrix green glow (#00FF00) creating warm interaction with tungsten lighting",
+      "button_backlighting": "cyan blue underglow (#4A9EFF) providing cool contrast to warm environment",
+      "rotary_underglow": "cyan blue halo (#4A9EFF) around base of encoder",
+      "ambient_crt_glow": "suggestion of warm amber CRT monitor glow from background (out of focus)"
+    }
+  },
+  "composition": {
+    "camera_angle": "classic 3/4 view from slightly above",
+    "camera_height": "20 degrees above product",
+    "camera_distance": "close-up editorial shot, product fills 65% of frame",
+    "focal_point": "rotary encoder and display",
+    "framing": "classic magazine product layout - centered with breathing room",
+    "negative_space": "30% space on right side for imaginary headline/copy",
+    "depth_of_field": "f/5.6 - product sharp, background softly blurred but recognizable",
+    "lens": "50mm normal lens - no distortion, natural perspective"
+  },
+  "surface": {
+    "type": "honey oak wood desk with visible grain",
+    "color": "#8B5A2B",
+    "texture": "natural wood grain clearly visible, slight sheen",
+    "finish": "satin polyurethane, slight reflection",
+    "lighting_interaction": "warm wood tones catching warm tungsten light, subtle device light reflections"
+  },
+  "background": {
+    "type": "1980s-90s home office environment, softly blurred",
+    "depth": "3-4 feet behind product",
+    "content": "wood-paneled wall (partial), CRT monitor with amber glow (out of focus), possibly a printed manual or floppy disk case (vintage tech elements)",
+    "colors": "warm browns (#654321), amber monitor glow (#FFB347), muted greens (#556B2F), cream walls (#F5DEB3)",
+    "blur_amount": "moderate blur (f/5.6), still somewhat recognizable but not distracting",
+    "mood": "nostalgic home computing era, Saturday afternoon in 1989"
+  },
+  "props": [
+    {
+      "id": "crt_monitor_partial",
+      "item": "CRT monitor with curved screen showing amber text",
+      "position": "background right, partially visible",
+      "visibility": "20% visible, out of focus",
+      "purpose": "era-appropriate context, nostalgic tech reference"
+    },
+    {
+      "id": "vintage_manual",
+      "item": "spiral-bound computer manual or reference book",
+      "position": "far left edge, partially out of frame",
+      "visibility": "edge visible, blurred",
+      "purpose": "period-appropriate context"
+    }
+  ],
+  "effects": {
+    "glow": {
+      "description": "warm practical light glow from device and CRT",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "medium, mixing with warm wood tones"
+        },
+        {
+          "source": "rotary underglow",
+          "color": "#4A9EFF",
+          "spread": "medium, cool accent in warm scene"
+        },
+        {
+          "source": "CRT monitor glow",
+          "color": "#FFB347",
+          "spread": "wide ambient glow in background"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "subtle reflection on satin wood finish",
+      "ambient_reflections": "warm tungsten light reflecting in brushed aluminum",
+      "specular_highlights": "warm highlights on encoder knurling"
+    },
+    "depth_of_field": {
+      "focal_plane": "entire product in focus",
+      "bokeh_style": "smooth, soft bokeh (not harsh circles)",
+      "blur_gradient": "gentle falloff to background blur"
+    },
+    "atmospheric": [
+      "very subtle film grain (simulating 1980s film stock)",
+      "warm color cast overall",
+      "slight vignette (natural lens vignette, not added in post)"
+    ]
+  },
+  "style_reference": {
+    "aesthetic": "1980s-90s tech magazine editorial - Byte, Popular Science, Compute! magazine photography",
+    "reference_brands": ["Classic Apple II era photography", "Commodore catalog shots", "Radio Shack TRS-80 marketing", "Popular Science magazine product reviews"],
+    "photography_style": "warm editorial, approachable, nostalgic without being kitsch",
+    "mood": "remembering when computers were exciting new tools, not yet ubiquitous"
+  },
+  "mood": "This device bridges past and future - modern AI capabilities presented with the warmth and approachability of classic home computing",
+  "negative_prompt": "cold lighting, modern minimalism, stark white backgrounds, clinical feel, gaming RGB, harsh shadows, oversaturated colors, pure black backgrounds, futuristic sci-fi elements",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}

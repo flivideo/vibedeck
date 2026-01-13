@@ -1,0 +1,185 @@
+{
+  "task": "generate_image",
+  "metadata": {
+    "version": "1.0",
+    "project": "vibedeck-kickstarter",
+    "timestamp": "2026-01-13",
+    "author": "Jen",
+    "shot_type": "lifestyle_shot_2D",
+    "custom_instruction": "CI-14: Soft Natural Window Light"
+  },
+  "product": {
+    "id": "vibedeck_controller",
+    "name": "VibeDeck",
+    "type": "hardware controller",
+    "form_factor": "horizontal keyboard-style device",
+    "dimensions": "8-10 inches wide, 3-4 inches deep, 1.5-2.5 inches tall",
+    "material": "brushed aluminum or high-quality ABS plastic",
+    "surface_finish": "matte, gunmetal gray",
+    "color": "#4A4A4A",
+    "components": [
+      {
+        "id": "oled_display",
+        "type": "OLED screen",
+        "position": "top center",
+        "size": "4-5 inches wide, 1 inch tall",
+        "content": "MODEL\nClaude Opus 4.5",
+        "text_color": "#00FF00",
+        "background_color": "#000000",
+        "font": "monospace terminal font"
+      },
+      {
+        "id": "rotary_encoder",
+        "type": "rotary dial with center button",
+        "position": "center, below display",
+        "material": "brushed aluminum",
+        "texture": "knurled edge",
+        "diameter": "1.5 inches",
+        "underglow": "#4A9EFF"
+      },
+      {
+        "id": "context_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "hexagon pattern around rotary encoder",
+        "spacing": "1.5 inches from rotary center",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "backlighting": "#4A9EFF",
+        "button_labels": ["CTX 1", "CTX 2", "CTX 3", "CTX 4", "CTX 5", "CTX 6"]
+      },
+      {
+        "id": "standalone_buttons",
+        "type": "mechanical keys",
+        "count": 6,
+        "arrangement": "horizontal row at bottom",
+        "keycaps": "low-profile, matte black",
+        "legends": "white text",
+        "buttons": [
+          {"label": "YES", "icon": "✓", "backlight": "#4CAF50"},
+          {"label": "NO", "icon": "✗", "backlight": "#F44336"},
+          {"label": "OTHER", "icon": "↻", "backlight": "#FF9800"},
+          {"label": "🎤", "icon": "microphone", "backlight": "#00E5FF", "size": "1.5u"},
+          {"label": "SEND", "icon": "→", "backlight": "#2196F3"},
+          {"label": "CHAT", "icon": "💬", "backlight": "#9C27B0"}
+        ]
+      }
+    ]
+  },
+  "lighting": {
+    "style": "Soft natural window light - comfortable, approachable, home office aesthetic",
+    "primary_light": {
+      "type": "large window light (simulated)",
+      "position": "camera left, 45-60 degrees from subject",
+      "intensity": "medium-high",
+      "softness": "very soft, diffused through window or sheer curtain",
+      "color_temperature": "5000K slightly warm daylight"
+    },
+    "fill_light": {
+      "type": "natural bounce fill from room",
+      "position": "right side, ambient room light",
+      "intensity": "low-medium",
+      "softness": "very soft, natural wrap-around",
+      "purpose": "gentle fill from ambient room light, maintains soft shadows"
+    },
+    "rim_light": {
+      "type": "subtle natural rim from window",
+      "position": "edge lighting from window direction",
+      "intensity": "low-medium",
+      "purpose": "gentle edge definition, natural and subtle"
+    },
+    "practical_lights": {
+      "oled_display": "matrix green glow (#00FF00), soft and warm",
+      "button_backlighting": "cyan and colored backlights visible but not overpowering",
+      "rotary_underglow": "cyan blue halo (#4A9EFF), gentle presence"
+    }
+  },
+  "composition": {
+    "camera_angle": "3/4 view from slightly above (15 degrees), natural perspective",
+    "camera_height": "15 degrees above eye-level, comfortable viewing angle",
+    "camera_distance": "close-up hero shot, product fills 65% of frame",
+    "focal_point": "rotary encoder and display, naturally centered",
+    "framing": "relaxed centered composition with organic negative space",
+    "negative_space": "30-35% space on right and top (toward window direction)",
+    "depth_of_field": "f/5.6 - product sharp, background gently soft but recognizable",
+    "lens": "50mm normal lens for natural, human perspective"
+  },
+  "surface": {
+    "type": "natural wood desk (light oak or walnut tone)",
+    "color": "#8B7355",
+    "texture": "visible wood grain, natural and warm",
+    "finish": "matte with subtle natural texture",
+    "lighting_interaction": "soft shadows from window light, warm reflections from wood tones"
+  },
+  "background": {
+    "type": "blurred home office environment",
+    "depth": "3-5 feet behind product",
+    "content": "hints of: indoor plant leaves (soft green, blurred), bookshelf with books (colors muted, out of focus), warm interior wall",
+    "colors": "warm earth tones - browns, greens, cream whites, natural colors",
+    "blur_amount": "moderate blur (f/5.6 bokeh) - background provides comfortable context without distraction",
+    "mood": "comfortable home office, lived-in creative space, approachable and human"
+  },
+  "props": [
+    {
+      "id": "coiled_cable",
+      "item": "retro coiled USB-C cable",
+      "position": "left side, naturally resting on desk",
+      "visibility": "20-30% visible, slightly soft focus",
+      "purpose": "authenticity and natural composition"
+    },
+    {
+      "id": "plant_leaves",
+      "item": "indoor plant (monstera or pothos)",
+      "position": "background right, heavily blurred",
+      "visibility": "soft green shapes, out of focus",
+      "purpose": "adds life and warmth to scene"
+    }
+  ],
+  "effects": {
+    "glow": {
+      "description": "Natural window light interacts with practical device lights",
+      "sources": [
+        {
+          "source": "OLED display",
+          "color": "#00FF00",
+          "spread": "soft warm glow on wood desk surface"
+        },
+        {
+          "source": "window light",
+          "color": "#F5F5DC",
+          "spread": "soft directional natural light creating gentle shadows"
+        }
+      ]
+    },
+    "reflections": {
+      "surface_reflections": "subtle reflections on wood desk, natural and warm",
+      "ambient_reflections": "soft window light reflections on brushed aluminum",
+      "specular_highlights": "gentle natural highlights, not harsh"
+    },
+    "depth_of_field": {
+      "focal_plane": "entire product in focus",
+      "bokeh_style": "natural, circular, soft lens bokeh",
+      "blur_gradient": "gentle falloff - sharp product, moderately soft background"
+    },
+    "atmospheric": [
+      "soft natural light quality - slightly warm, inviting",
+      "hint of dust particles in window light (very subtle, optional)",
+      "natural color grading - warm but not oversaturated"
+    ]
+  },
+  "style_reference": {
+    "aesthetic": "Natural lifestyle product photography - comfortable, approachable, real workspace",
+    "reference_brands": ["Kinfolk magazine product features", "Wirecutter product reviews", "Indie maker Instagram product shots", "Cozy home office setups"],
+    "photography_style": "natural light lifestyle, approachable without being casual, comfortable professionalism",
+    "mood": "welcoming, human-centered, this fits naturally into your creative life"
+  },
+  "mood": "This device lives comfortably in your creative space - it's professional, capable, and feels like it belongs in your daily workflow",
+  "negative_prompt": "harsh studio lighting, sterile clinical environment, artificial colored lights, busy cluttered background, dramatic shadows, cold industrial feel, over-processed, HDR look",
+  "output_format": {
+    "width": 2048,
+    "height": 1536,
+    "aspect_ratio": "4:3",
+    "mime_type": "image/png",
+    "quality": "ultra"
+  }
+}
