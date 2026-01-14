@@ -127,6 +127,12 @@ class VibeDeckApp {
       this.statusPanel.render();
     });
 
+    // Option clicked - execute action immediately
+    this.modal.on('option:select', (option) => {
+      console.log('Option selected, executing action:', option.action);
+      this.executeAction(option.action);
+    });
+
     // Dial rotation navigates modal options
     this.dialController.on('dial:rotate', (delta) => {
       if (this.state.isModalOpen) {
@@ -168,11 +174,32 @@ class VibeDeckApp {
       });
     });
 
-    // ESC key also closes options panel
+    // Global keyboard shortcuts
     document.addEventListener('keydown', (e) => {
+      // ESC closes options panel
       if (e.key === 'Escape' && this.state.isModalOpen) {
         this.state.closeModal();
         this.modal.render();
+        return;
+      }
+
+      // Number keys (1-6) trigger pads (works anytime, even with modal open)
+      // This allows switching between pads with keyboard
+      if (e.key >= '1' && e.key <= '6') {
+        const padIndex = parseInt(e.key) - 1;
+        const pads = this.state.getCurrentPads();
+        if (pads[padIndex]) {
+          console.log(`Keyboard shortcut: ${e.key} -> ${pads[padIndex].label}`);
+          this.state.openModal(pads[padIndex]);
+          this.modal.render();
+
+          // Show visual feedback
+          const padElement = document.querySelector(`.pad-${padIndex}`);
+          if (padElement) {
+            padElement.classList.add('selected');
+            setTimeout(() => padElement.classList.remove('selected'), 300);
+          }
+        }
       }
     });
 

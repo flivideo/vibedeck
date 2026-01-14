@@ -8,6 +8,17 @@ export class Modal {
     this.optionsSection = document.getElementById('options-section');
     this.optionsLabel = document.getElementById('options-label');
     this.optionsList = document.getElementById('options-list');
+    this.listeners = {};
+  }
+
+  on(event, callback) {
+    this.listeners[event] = callback;
+  }
+
+  emit(event, data) {
+    if (this.listeners[event]) {
+      this.listeners[event](data);
+    }
   }
 
   render() {
@@ -34,6 +45,11 @@ export class Modal {
       el.addEventListener('click', () => {
         this.state.selectedIndex = i;
         this.state.selectedOption = options[i];
+
+        // Execute action immediately on click
+        console.log('Option clicked:', options[i].label);
+        this.emit('option:select', options[i]);
+
         this.render();
       });
     });

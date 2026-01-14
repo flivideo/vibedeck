@@ -31,6 +31,7 @@ export class PadGrid {
       html += `
         <div class="pad pad-${index}" data-pad-id="${pad.id}">
           <div class="pad-label">${pad.label}</div>
+          <div class="pad-shortcut">[${index + 1}]</div>
         </div>
       `;
     });

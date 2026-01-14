@@ -10,10 +10,11 @@ export class SocketService {
   }
 
   /**
-   * Connect to Socket.IO server
+   * Connect to Socket.IO server (same origin as the page)
    */
   connect() {
-    this.socket = io('http://localhost:5501');
+    // Connect to same server that served this page (no hardcoded port!)
+    this.socket = io();
 
     this.socket.on('connect', () => {
       console.log('Connected to VibeDeck server');

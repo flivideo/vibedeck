@@ -8,11 +8,16 @@ import { ConfigManager } from './config/ConfigManager';
 import { WindowManager } from './managers/WindowManager';
 import { ActionExecutor } from './managers/ActionExecutor';
 
-// Load environment variables
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+// Load environment variables from project root
+const envPath = path.resolve(__dirname, '../../.env');
+dotenv.config({ path: envPath });
+
+// Debug: Log environment loading
+console.log(`Loading .env from: ${envPath}`);
+console.log(`PORT from env: ${process.env.PORT}`);
 
 // Configuration
-const PORT = process.env.PORT || 5501;
+const PORT = parseInt(process.env.PORT || '5500', 10);
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5500';
 const CONFIG_FILE = path.join(__dirname, '../../config.json');
 const DEFAULT_CONFIG_FILE = path.join(__dirname, '../../docs/default-config.json');
@@ -43,7 +48,14 @@ const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
 app.use(express.json({ limit: '50mb' }));
 
 // Serve static client files
-app.use(express.static(path.join(__dirname, '../../client')));
+const clientPath = path.join(__dirname, '../../client');
+console.log(`Serving static files from: ${clientPath}`);
+app.use(express.static(clientPath));
+
+// Explicit root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(clientPath, 'index.html'));
+});
 
 // Initialize managers
 console.log('Initializing VibeDeck server...');
