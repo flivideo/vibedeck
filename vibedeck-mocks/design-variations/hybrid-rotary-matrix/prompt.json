@@ -1,0 +1,10 @@
+{
+  "id": "D2",
+  "name": "Hybrid-Rotary-Matrix",
+  "category": "Design Variations",
+  "concept": "Central rotary knob with button grid on sides",
+  "date": "2026-01-15",
+  "models_tested": ["DALL-E 3", "Kie (SeeDance 4.5)", "Fal"],
+  "prompt": "Design a VibeDeck controller that combines a large central rotary knob with a button grid.\n\nFeatures:\n- Large premium rotary encoder in the center (brushed aluminum, knurled grip)\n- 6 LCD buttons arranged in 2 rows of 3 on the left side\n- 6 LCD buttons arranged in 2 rows of 3 on the right side\n- Small OLED display above the rotary showing current selection\n- Bottom row: 4 action buttons (YES, NO, microphone, SEND)\n- Wider rectangular form factor to accommodate both elements\n- Dark gray housing with cyan LED accents\n- USB-C with coiled cable\n\nStyle: Professional product photography, clean studio lighting, slight overhead angle, neutral background. Device fills 70% of frame. Premium tech aesthetic.",
+  "design_rationale": "Combines the best of both worlds - rotary for quick navigation and button matrix for direct access. Tests if hybrid approach offers better UX than pure rotary or pure matrix."
+}

@@ -1,0 +1,10 @@
+{
+  "id": "D1",
+  "name": "Button-Matrix",
+  "category": "Design Variations",
+  "concept": "Stream Deck style button grid",
+  "date": "2026-01-15",
+  "models_tested": ["DALL-E 3", "Kie (SeeDance 4.5)", "Fal"],
+  "prompt": "Design a VibeDeck controller as a button-matrix device inspired by Elgato Stream Deck.\n\nFeatures:\n- 4x3 grid of LCD buttons (12 buttons total), each showing customizable icons/text\n- Small OLED status bar at top showing current mode\n- Compact rectangular form factor, sits flat on desk\n- USB-C connection with detachable cable\n- Subtle RGB underglow around edges\n- Matte black aluminum housing with rounded corners\n- Each LCD button approximately 1 inch square\n\nStyle: Professional product photography, clean studio lighting, 45-degree angle view, neutral gray background. Device should fill 70% of frame. Modern, premium tech aesthetic like Apple or Elgato products.",
+  "design_rationale": "Stream Deck is the dominant product in this space. Testing if VibeDeck should adopt a similar button-matrix approach for familiarity and proven UX."
+}
