@@ -1,123 +1,131 @@
-# VibeDeck Sample Images
+# VibeDeck Mockups - 5 Dimensions Framework
 
-**Purpose**: Sample images for VibeDeck application and Kickstarter campaign
-**Location**: Project root for easy application/server access
-**Status**: 6 material style variations generated
+**Purpose**: Comprehensive design exploration system for VibeDeck hardware controller
+**Status**: Reorganized to 5-dimension framework (2026-01-15)
+**Total Assets**: 25 surface treatment variations, 7 reference images
 
 ---
 
 ## Overview
 
-This directory contains generated product images for the VibeDeck hardware controller showing different material and design variations. Images serve two primary purposes:
+This directory contains generated product images for the VibeDeck hardware controller, organized according to a **5-dimension framework** that separates decorative variations from fundamental design innovation.
 
-1. **Application Integration**: VibeDeck server/application can easily reference these images
-2. **Kickstarter Campaign**: Marketing materials, hero images, style variations
+**Critical Distinction**:
+- **Skins** (Dimension 2) = Surface treatments on same design (like iPhone cases)
+- **Design Variations** (Dimension 3) = Fundamental design exploration (different form factors, interaction models, industrial design languages)
+
+---
+
+## The 5 Dimensions
+
+### Dimension 1: Product Photography Angles
+**Purpose**: Multiple views of ONE design for Kickstarter marketing
+**Location**: `reference-images/`
+**Status**: 7 reference images (canonical, cyberpunk, desk-setup, detail-closeup, etc.)
+
+### Dimension 2: Skins / Surface Treatments ✓
+**Purpose**: Visual customization of established design
+**Location**: `skins/`
+**Status**: ✓ 25 variations complete (carved-wood, resin-flowers, vaporwave, day-of-the-dead, etc.)
+
+### Dimension 3: Design Variations ⭐ THE INNOVATION
+**Purpose**: Fundamentally different product concepts
+**Location**: `design-variations/` (empty - to be generated)
+**Examples to explore**:
+- Rotary-minimalist (current concept refined)
+- Touchscreen-tablet (iPad-like flat approach)
+- Button-matrix (Stream Deck style - 3x4, 4x4 grids)
+- Hybrid-rotary-matrix (central rotary + button grid)
+- Voice-orb (microphone-focused, voice-first interaction)
+- Slider-bank (mixing desk style, multiple linear controls)
+- Clip-on-pendant (wearable, always-accessible)
+- Arcade-mini (Pac-Man console inspiration)
+- Clamshell-protective (Game & Watch fold-open)
+
+**Interaction Models to Explore**:
+- Rotary-centric (current concept)
+- Touchscreen dominant
+- Voice-first with minimal buttons
+- Button-matrix (Stream Deck influence)
+- Slider-based controls
+- Gesture-based
+- Hybrid approaches
+
+### Dimension 4: Manufacturing Practicality
+**Purpose**: Can this be built? At what cost? At what scale?
+**Location**: `manufacturing-analysis/` (empty - to be created)
+**Evaluates**: Injection molding, 3D printing, CNC machining feasibility and costs
+
+### Dimension 5: Model Selection & Optimization
+**Purpose**: Which AI model for which task? Model-specific best practices
+**Location**: `docs/model-research/` (to be populated)
+**Focus**: Kie.AI and Fal.AI model routers, top 10 models, cost/quality optimization
 
 ---
 
 ## Directory Structure
 
 ```
-vibedeck-samples/
+vibedeck-mocks/
 ├── README.md (this file)
+├── AUDIT-REPORT.md (verification report)
+├── REORGANIZATION-COMPLETE.md (reorganization history)
 │
-├── retro-plastic-70s/           # Grey plastic, 70s/80s Akai-style design
-│   ├── 1A.png
-│   ├── 1B.png
-│   ├── 1C.png
-│   ├── 2A.png
-│   ├── 2B.png
-│   ├── 2C.png
-│   └── 2D.png
+├── reference-images/                    # Dimension 1: Product Photography
+│   ├── canonical.png (base layout reference)
+│   ├── cyberpunk.png (dramatic lighting variant)
+│   ├── desk-setup.png (lifestyle context)
+│   ├── detail-closeup.png (macro detail)
+│   ├── variant-2b.png
+│   ├── variant-2c.png
+│   └── variant-2d.png
 │
-├── carved-wood/                 # Carved from walnut wood
-│   ├── 1A.png
-│   ├── 1A-carved-wood.json
-│   └── BATCH-1-MATERIALS.md
+├── skins/                               # Dimension 2: Surface Treatments ✓
+│   ├── alien-artifact.json/png (biomechanical HR Giger)
+│   ├── art-deco.json/png (1920s geometric gold)
+│   ├── candy-land.json/png (made of candy)
+│   ├── carved-wood.json/png (walnut wood grain)
+│   ├── concrete-brutalist.json/png (raw concrete)
+│   ├── coral-reef.json/png (underwater bioluminescence)
+│   ├── day-of-the-dead.json/png (sugar skull patterns)
+│   ├── filipino-jeepney.json/png (chrome decorations)
+│   ├── graffiti.json/png (spray paint street art)
+│   ├── japanese-ukiyo-e.json/png (Great Wave woodblock)
+│   ├── lego-bricks.json/png (built from LEGO)
+│   ├── made-by-child.json/png (crayon drawings)
+│   ├── melting-dali.json/png (Salvador Dali melting)
+│   ├── mexican-talavera.json/png (hand-painted pottery)
+│   ├── moroccan-tiles.json/png (zellige mosaics)
+│   ├── origami-paper.json/png (folded paper)
+│   ├── overgrown-nature.json/png (moss and plants)
+│   ├── plush-toy.json/png (soft fleece stuffed)
+│   ├── resin-flowers.json/png (embedded flowers)
+│   ├── scandinavian-minimal.json/png (pale birch)
+│   ├── stained-glass.json/png (colorful glass)
+│   ├── studio-ghibli.json/png (magical artifact)
+│   ├── vaporwave.json/png (90s internet aesthetic)
+│   ├── volcanic-lava.json/png (obsidian with lava)
+│   └── wizard-tower.json/png (spellbook leather)
 │
-├── resin-flowers/               # Clear resin with embedded flowers
-│   ├── 1B.png
-│   ├── 1B-resin-flowers.json
-│   └── BATCH-2-ART-MOVEMENTS.md
+├── design-variations/                   # Dimension 3: Innovation (empty)
+│   └── (to be generated - fundamental design exploration)
 │
-├── stained-glass/               # Stained glass window design
-│   ├── 1C.png
-│   ├── 1C-stained-glass.json
-│   └── BATCH-3-WORLDS.md
-│
-├── lego-bricks/                 # Built from LEGO pieces
-│   ├── 1D.png
-│   ├── 1D-lego-bricks.json
-│   └── BATCH-4-CULTURAL.md
-│
-└── concrete-brutalist/          # Raw poured concrete, brutalist architecture
-    ├── 1E.png
-    ├── 1E-concrete-brutalist.json
-    └── BATCH-5-UNEXPECTED.md
+└── manufacturing-analysis/              # Dimension 4: Feasibility (empty)
+    └── (to be created - injection molding, 3D printing analysis)
 ```
 
----
-
-## Sample Styles
-
-### 1. Retro Plastic (70s/80s)
-
-**Folder**: `retro-plastic-70s/`
-**Images**: 7 variations (1A.png through 2D.png)
-**Style**: Grey plastic design reminiscent of 70s/80s Akai video players and recording machines
-**Appeal**: Nostalgic, retro-tech aesthetic
-
-### 2. Carved Wood
-
-**Folder**: `carved-wood/`
-**Concept**: Luxury carved from single block of walnut wood
-**Style**: Premium craftsmanship, visible wood grain, polished finish
-**Appeal**: Audiophile/luxury market, natural materials
-
-### 3. Resin with Embedded Flowers
-
-**Folder**: `resin-flowers/`
-**Concept**: Clear epoxy resin with preserved flowers frozen inside
-**Style**: Ethereal, romantic, nature meets technology
-**Appeal**: Unique art piece, feminine aesthetic
-
-### 4. Stained Glass
-
-**Folder**: `stained-glass/`
-**Concept**: Medieval church window aesthetic
-**Style**: Colorful glass pieces, lead caming, dramatic backlighting
-**Appeal**: Sacred/artistic feel, dramatic visual impact
-
-### 5. LEGO Bricks
-
-**Folder**: `lego-bricks/`
-**Concept**: Actually constructed from LEGO pieces
-**Style**: Playful, nostalgic, colorful building blocks
-**Appeal**: Maker/builder audience, childhood nostalgia
-
-### 6. Concrete Brutalist
-
-**Folder**: `concrete-brutalist/`
-**Concept**: Raw poured concrete, architectural monument
-**Style**: Heavy, monolithic, industrial minimalism
-**Appeal**: Architects/designers, bold statement piece
+**External**: `docs/model-research/` - Dimension 5 knowledge base
 
 ---
 
-## File Organization
+## File Naming Conventions
 
-### Within Each Folder
+**Congruent Naming**: Every mockup has matching JSON and PNG files
+- Example: `carved-wood.json` pairs with `carved-wood.png`
+- JSON contains: model used, prompt, generation date, rationale
+- PNG contains: generated image at high resolution
 
-**Image files**: Original PNG images from generation
-- Example: `1A.png`, `1B.png`, `2D.png`
-
-**Prompt files** (where available): JSON prompt/parameters used
-- Example: `1A-carved-wood.json`
-- Contains full generation details for reproducibility
-
-**Batch documentation** (where available): Design notes and rationale
-- Example: `BATCH-1-MATERIALS.md`
-- Concept, prompt, and reasoning for the style
+**Alphabetically Sorted**: All files sorted for easy navigation
 
 ---
 
@@ -125,108 +133,143 @@ vibedeck-samples/
 
 ### In VibeDeck Application
 
-The VibeDeck server can reference these images directly:
-
+Reference images directly:
 ```javascript
-// Example path reference
-const sampleImagePath = './vibedeck-mocks/carved-wood/1A.png';
-```
+// Skins (surface treatments)
+const skinImagePath = './vibedeck-mocks/skins/carved-wood.png';
 
-Located at project root for easy relative path access from server code.
+// Product photography (canonical reference)
+const heroImagePath = './vibedeck-mocks/reference-images/canonical.png';
+```
 
 ### For Kickstarter Campaign
 
-**Style Variations**: Use to demonstrate:
-- Design flexibility
-- Potential customization options
+**Product Photography** (Dimension 1):
+- Hero images from different angles
+- Lifestyle context shots
+- Detail close-ups for quality demonstration
+
+**Skins** (Dimension 2):
 - Stretch goal rewards (custom materials/finishes)
 - Backer tier exclusives
+- Design flexibility demonstration
 
-**Marketing Materials**:
-- Website product galleries
-- Social media teasers showing different styles
-- Email campaign visuals
-- Crowdfunding page design variations
+**Design Variations** (Dimension 3) - to be generated:
+- Fundamental product concepts
+- Different form factors
+- Alternative interaction models
+- Industrial design exploration
 
 ---
 
 ## Image Metadata
 
-### Standard Dimensions
-- **Resolution**: Typically 1024x1024 or similar
-- **Format**: PNG (high quality)
-- **Aspect Ratio**: Varies by style
+### JSON Structure
+Each `.json` file contains:
+```json
+{
+  "id": "M1",
+  "file": "carved-wood.png",
+  "name": "Carved Wood",
+  "category": "Materials & Textures",
+  "model": "ChatGPT (DALL-E 3)",
+  "date": "2026-01-14",
+  "prompt": "Full DALL-E 3 prompt...",
+  "why": "Design rationale..."
+}
+```
 
-### Generation Details
-
-Where `.json` files are present, they contain:
-- **Model used**: ChatGPT (DALL-E 3), Nano Banana Pro, etc.
-- **Prompt text**: Full prompt including base description + style instructions
-- **Parameters**: Resolution, quality settings, style modifiers
-- **Generation date**: When image was created
-
----
-
-## Style Reference
-
-For complete style descriptions, prompts, and additional style variations, see:
-**`docs/vibedeck/artistic-styles-reference.md`**
-
-This reference includes 80+ total style variations across multiple categories:
-- Photography & Lighting styles (30 variations)
-- Artistic Material Variations (50+ variations)
-
----
-
-## Contributing New Samples
-
-### Generation Workflow
-
-1. **Select style**: Choose from `docs/vibedeck/artistic-styles-reference.md`
-2. **Generate image**: Use preferred platform (ChatGPT, Nano Banana Pro, etc.)
-3. **Create folder**: `[descriptive-name]/` (use kebab-case)
-4. **Save files**:
-   - Image: `[code].png` or descriptive name
-   - Prompt (optional): `[name].json`
-   - Docs (optional): `BATCH-[#]-[CATEGORY].md`
-
-### Quality Standards
-
-- ✅ **Device clearly visible**: VibeDeck controller recognizable
-- ✅ **Button labels readable**: CTX buttons, action buttons visible
-- ✅ **LCD screen shown**: Display visible with content
-- ✅ **Professional quality**: Campaign-ready resolution and composition
-- ✅ **Style consistency**: Follows design concept accurately
+### Image Quality
+- **Resolution**: 1024x1024 typical, higher for production
+- **Format**: PNG (high quality, lossless)
+- **Models Used**: DALL-E 3 (current), FLUX.2, Nano Banana Pro (planned)
 
 ---
 
 ## Current Status
 
-**Total Samples**: 6 style variations
-**Total Images**: 32 individual images
-**Generation Models**: ChatGPT (DALL-E 3), experimental
+### ✓ Completed
+- **25 Skins** (Dimension 2): All surface treatment variations generated and organized
+- **7 Reference Images** (Dimension 1): Product photography angles
+- **Audit Complete**: 100% accuracy verification of JSON-PNG pairs
+- **Reorganization Complete**: Flat structure → 5-dimension framework
 
-**Completed Styles**:
-- ✅ Retro Plastic 70s/80s (7 images)
-- ✅ Carved Wood
-- ✅ Resin Flowers
-- ✅ Stained Glass
-- ✅ LEGO Bricks
-- ✅ Concrete Brutalist
+### ⏳ In Progress
+- **Model Research** (Dimension 5): Kie.AI/Fal.AI model routers, top 10 models
+- **Manufacturing Guidelines** (Dimension 4): Injection molding, 3D printing feasibility
 
-**Potential Future Styles**: See `docs/vibedeck/artistic-styles-reference.md` for 70+ additional style variations that could be generated.
+### 🔜 Upcoming
+- **Design Variations** (Dimension 3): 10-30 fundamental design concepts
+- **FliDeck Visualization**: Gallery system for viewing/comparing mockups
+- **Manufacturing Analysis**: Feasibility evaluation for each design variation
 
 ---
 
-## Quick Links
+## Contributing New Mockups
 
-- **Style Reference**: `docs/vibedeck/artistic-styles-reference.md` (80+ styles)
-- **Project Documentation**: `docs/vibedeck/README.md`
-- **Image Generation Knowledge**: `docs/image-generation/`
+### Generation Workflow
+
+**For Skins** (Dimension 2):
+1. Select artistic style from `docs/vibedeck-artistic-styles-reference.md`
+2. Generate using ChatGPT, FLUX.2, or Nano Banana Pro
+3. Save to `skins/[descriptive-name].json` and `.png`
+4. Update JSON metadata
+
+**For Design Variations** (Dimension 3):
+1. Conceptualize fundamental design approach (form factor, interaction model)
+2. Consult model-research guide for best model choice
+3. Generate image with design exploration prompt
+4. Save to `design-variations/[concept-name]/` folder
+5. Create notes.md documenting design rationale
+6. Evaluate manufacturing feasibility
+
+### Quality Standards
+
+- ✅ Device clearly visible and recognizable as VibeDeck concept
+- ✅ Button labels readable (CTX buttons, action buttons)
+- ✅ LCD screen visible with display content
+- ✅ Professional quality (campaign-ready resolution)
+- ✅ Style/design consistency with concept
+- ✅ JSON metadata complete and accurate
+
+---
+
+## Stream Deck Influence
+
+**Hardware Research**: VibeDeck team has purchased 10 Stream Deck devices (Elgato + Chinese variants) for design exploration.
+
+**Key Learnings**:
+- Button matrix configurations: 2x3, 3x5, 4x4, 4x8
+- Control types: LCD buttons, rotary encoders, sliders, recording buttons
+- Microphone integration for voice/recording workflows
+- Hybrid layouts: buttons + rotaries, buttons + sliders
+- Use cases: Streamers, video editors, audio producers, developers, AI users
+
+**Design Implications**: Future design variations (Dimension 3) should explore button-matrix + rotary hybrids, slider integrations, voice/recording-first designs.
+
+---
+
+## Documentation Links
+
+- **Artistic Styles**: `docs/vibedeck-artistic-styles-reference.md` (80+ styles)
+- **Project Overview**: `docs/vibedeck-project.md`
+- **Image Generation KB**: `docs/image-generation/`
+- **Model Research**: `docs/model-research/` (to be created)
+- **Manufacturing Analysis**: `manufacturing-analysis/` (to be created)
 - **POEM Workflow**: `poem/vibedeck-kickstarter-images/`
 
 ---
 
-**Last Updated**: 2026-01-15
-**Maintained By**: Jan (image generation), David (curation)
-**For Questions**: See project docs or contact team leads
+## Next Steps
+
+1. **Complete Model Research** - Document Kie.AI/Fal.AI routers, identify top 10 models
+2. **Create Manufacturing Guidelines** - Injection molding, 3D printing, cost analysis
+3. **Generate Design Variations** - 10-30 fundamental design concepts
+4. **Manufacturing Analysis** - Evaluate feasibility for each design variation
+5. **FliDeck Integration** - Build visualization gallery for mockup review
+
+---
+
+**Last Updated**: 2026-01-15 (Reorganized to 5-dimension framework)
+**Framework**: Research plan at `~/.claude/plans/swift-toasting-tarjan.md`
+**Status**: Phase 1 in progress - immediate actions executing
