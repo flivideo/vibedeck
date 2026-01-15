@@ -62,6 +62,37 @@ workspace:
           description: Nano Banana best practices
           priority: 20
 
+    vibedeck-kickstarter-images:
+      prompts: poem/vibedeck-kickstarter-images/prompts
+      schemas: poem/vibedeck-kickstarter-images/schemas
+      mockData: poem/vibedeck-kickstarter-images/mock-data
+      workflowData: poem/vibedeck-kickstarter-images/workflow-data
+      reference:
+        - path: docs/model-research/
+          type: local
+          description: AI model selection guide, best practices, cost optimization for image generation
+          priority: 30
+        - path: vibedeck-mocks/manufacturing-analysis/
+          type: local
+          description: Manufacturing feasibility, cost analysis, injection molding and 3D printing guidelines
+          priority: 25
+        - path: vibedeck-mocks/design-variations/
+          type: local
+          description: Design innovation concepts, notes, and manufacturing evaluations
+          priority: 20
+        - path: vibedeck-mocks/skins/
+          type: local
+          description: Surface treatment examples (25 artistic style variations)
+          priority: 15
+        - path: vibedeck-mocks/reference-images/
+          type: local
+          description: Product photography reference images
+          priority: 10
+        - path: docs/image-generation/
+          type: local
+          description: General image generation knowledge base
+          priority: 5
+
   # ============================================================================
   # FLAT STRUCTURE (Backward Compatibility - used if currentWorkflow not set)
   # ============================================================================
