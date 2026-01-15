@@ -1,0 +1,388 @@
+{
+  "design_name": "vibedeck-rotary-minimalist",
+  "design_id": "D3-001",
+  "date_evaluated": "2026-01-15",
+  "evaluator": "Engineering Team",
+  "status": "concept|prototype|production-ready",
+
+  "form_factor": {
+    "dimensions": {
+      "length_mm": 80,
+      "width_mm": 60,
+      "height_mm": 25,
+      "weight_target_g": 120
+    },
+    "ergonomics": "one-handed operation, thumb controls primary interaction",
+    "size_class": "pocket-sized|palm-sized|desk-sized|wearable",
+    "portability": "highly portable, fits in pocket"
+  },
+
+  "interaction_model": {
+    "primary_input": "rotary encoder (continuous rotation)",
+    "secondary_input": "4 tactile buttons (CTX1-4)",
+    "tertiary_input": "none",
+    "input_types": ["rotary", "buttons"],
+    "voice_support": false,
+    "touchscreen": false,
+    "output_display": "128x64 monochrome LCD",
+    "haptic_feedback": false,
+    "audio_feedback": false
+  },
+
+  "industrial_design": {
+    "style": "modern minimalist, professional tool aesthetic",
+    "influences": ["Stream Deck", "audio mixing consoles", "iPod classic"],
+    "target_market": "developers, content creators, AI power users",
+    "premium_tier": false,
+    "differentiation": "rotary knob for analog control, context switching via buttons"
+  },
+
+  "injection_molding": {
+    "feasibility": "excellent|good|fair|poor|not-viable",
+    "feasibility_rating": "excellent",
+    "tooling_cost_estimate": {
+      "aluminum_prototype_mold": "$8,000 - $12,000",
+      "steel_production_mold_single_cavity": "$18,000 - $25,000",
+      "steel_production_mold_multi_cavity": "$35,000 - $50,000"
+    },
+    "unit_cost_estimates": {
+      "at_1000_units": "$12 - $18 per unit (including amortized tooling)",
+      "at_5000_units": "$7 - $10 per unit",
+      "at_10000_units": "$5 - $8 per unit",
+      "at_50000_units": "$4 - $6 per unit"
+    },
+    "unit_cost_breakdown_10k": {
+      "material_abs": "$0.15",
+      "molding_labor": "$1.50",
+      "button_caps_molded": "$0.50",
+      "silicone_membrane": "$0.50",
+      "knob_molded_painted": "$0.80",
+      "deflashing_qc": "$0.35",
+      "pad_printing_labels": "$0.50",
+      "assembly_labor": "$1.20",
+      "subtotal_housing": "$5.50",
+      "amortized_tooling_20k_over_10k": "$2.00",
+      "total_per_unit": "$7.50"
+    },
+    "key_challenges": [
+      "LCD bezel area: potential undercut if not designed carefully",
+      "Button pocket depth: requires adequate draft angles (5° recommended)",
+      "USB-C port recess: must be perpendicular to parting line to avoid side action",
+      "Rotary knob: requires separate tooling (button mold separate from housing)"
+    ],
+    "design_recommendations": [
+      "Use separate snap-fit LCD bezel ring (eliminates undercut)",
+      "Orient USB-C port perpendicular to parting line",
+      "Design button pockets with 5° draft for easy release",
+      "Maintain 2mm uniform wall thickness throughout housing",
+      "Use 1mm internal radii (50% of 2mm wall)",
+      "Place parting line on side edge (least visible location)"
+    ],
+    "recommended_materials": [
+      {
+        "name": "ABS (Acrylonitrile Butadiene Styrene)",
+        "grade": "General purpose, medium impact",
+        "cost_per_kg": "$2.50 - $3.00",
+        "properties": "Good surface finish, easy to mold, paintable",
+        "suitability": "Excellent for VibeDeck"
+      },
+      {
+        "name": "PC-ABS Blend",
+        "grade": "Engineering blend",
+        "cost_per_kg": "$3.50 - $5.00",
+        "properties": "Higher impact resistance, premium feel",
+        "suitability": "Good for premium tier"
+      }
+    ],
+    "finish_options": [
+      {
+        "finish": "MT-11050 (fine leather texture)",
+        "cost_impact": "Standard (no premium)",
+        "appearance": "Matte, hides fingerprints, professional",
+        "recommendation": "Primary choice for housing"
+      },
+      {
+        "finish": "SPI C-2 (matte smooth)",
+        "cost_impact": "Standard",
+        "appearance": "Smooth matte, clean look",
+        "recommendation": "Alternative option"
+      },
+      {
+        "finish": "SPI A-2 (high gloss)",
+        "cost_impact": "+$2K-5K tooling, +$0.50/unit polishing",
+        "appearance": "Premium glossy finish, piano black",
+        "recommendation": "Only for premium limited edition"
+      }
+    ],
+    "assembly_notes": "Snap-fit main housing (4 snap locations), PCB secured with 4x M2 screws into heat-set brass inserts, silicone membrane between button caps and PCB",
+    "cycle_time_estimate": "45-60 seconds per part",
+    "minimum_order_quantity": "1,000 units (to justify tooling investment)"
+  },
+
+  "3d_printing": {
+    "feasibility": "excellent|good|fair|poor|not-viable",
+    "feasibility_rating": "excellent",
+    "recommended_process": "SLS (Selective Laser Sintering) with PA12 Nylon",
+    "alternative_processes": ["MJF (Multi Jet Fusion)", "FDM (for prototypes only)"],
+    "unit_cost_estimates": {
+      "sls_10_units": "$60 per unit",
+      "sls_50_units": "$52 per unit",
+      "sls_100_units": "$48 per unit",
+      "sls_500_units": "$42 per unit",
+      "mjf_100_units": "$45 per unit",
+      "mjf_500_units": "$38 per unit"
+    },
+    "material": {
+      "name": "PA12 (Nylon 12)",
+      "properties": "Strong, durable, slight flexibility for snap fits",
+      "finish": "Matte gray as-printed, can be dyed black",
+      "limitations": "Slightly porous, absorbs moisture (seal if needed)"
+    },
+    "volume_estimate_cm3": 45,
+    "key_challenges": [
+      "Slightly rough surface texture (acceptable for beta units)",
+      "Gray color only (can be dyed black for +$2-5/unit)",
+      "Heat-set inserts required for screw bosses (not threaded directly)",
+      "Dimensional accuracy ±0.3mm (may need clearance adjustment)"
+    ],
+    "design_recommendations": [
+      "Design for 0.5mm clearances between mating parts (vs 0.3mm for injection molding)",
+      "Use 3.5mm through-holes for M2 heat-set brass inserts ($0.05 each)",
+      "No support structures needed (SLS powder self-supporting)",
+      "Can use complex geometries not possible with injection molding"
+    ],
+    "post_processing": [
+      {
+        "option": "As-printed natural gray",
+        "cost": "$0",
+        "appearance": "Matte gray, acceptable for beta units",
+        "recommendation": "Use for first 50-100 beta units"
+      },
+      {
+        "option": "Dyed black",
+        "cost": "$2 - $5 per unit",
+        "appearance": "Professional black finish, hides texture",
+        "recommendation": "Use for Kickstarter fulfillment if <500 units"
+      },
+      {
+        "option": "Vapor smoothed",
+        "cost": "$5 - $10 per unit",
+        "appearance": "Near injection-molded smoothness",
+        "recommendation": "Overkill for VibeDeck, skip to save cost"
+      }
+    ],
+    "lead_time": "3-5 business days for first batch, 2-3 days for repeat orders",
+    "break_even_point": "3D printing cheaper below ~470 units, injection molding cheaper above"
+  },
+
+  "cnc_machining": {
+    "feasibility": "fair|poor|not-viable",
+    "feasibility_rating": "fair",
+    "recommended_use_case": "Premium limited edition rotary knob only, not full housing",
+    "material": "Aluminum 6061-T6, anodized black",
+    "unit_cost_estimates": {
+      "full_housing_cnc": "$150 - $250 per unit (not economical)",
+      "rotary_knob_only": "$3 - $5 per unit (viable for premium tier)"
+    },
+    "key_challenges": [
+      "Deep internal pockets require multiple setups (expensive)",
+      "LCD cavity difficult to machine with standard tooling",
+      "Material waste high (90% of aluminum block removed)",
+      "Long cycle time per part (2-4 hours machining time)"
+    ],
+    "recommendation": "Only use CNC for rotary knob (premium feel) and possibly LCD bezel ring as accent pieces. Do not CNC machine full housing."
+  },
+
+  "hybrid_manufacturing": {
+    "recommended_approach": "SLS main housing + CNC aluminum knob + silicone membrane",
+    "cost_breakdown": {
+      "housing_sls": "$48",
+      "knob_cnc_aluminum": "$5",
+      "bezel_ring_sls_dyed": "$3",
+      "membrane": "$0.50",
+      "heat_set_inserts_4x": "$0.20",
+      "assembly_labor": "$2",
+      "total": "$58.70"
+    },
+    "value_proposition": "Premium aluminum knob for only $3 extra provides significant perceived value"
+  },
+
+  "bom_cost_estimate": {
+    "housing_and_mechanical": {
+      "injection_molded_at_10k": "$5.50",
+      "sls_3d_printed_at_100": "$48.00",
+      "note": "Use appropriate manufacturing method based on volume"
+    },
+    "electronics": {
+      "pcb_assembly": "$12 - $18",
+      "rotary_encoder": "$3 - $5",
+      "lcd_128x64": "$4 - $8",
+      "microcontroller": "$2 - $4",
+      "usb_c_connector": "$0.50",
+      "passive_components": "$1 - $2",
+      "subtotal_electronics": "$22.50 - $37.50"
+    },
+    "cable_and_accessories": {
+      "usb_c_cable_1_5m": "$1.50 - $3.00",
+      "heat_shrink_strain_relief": "$0.20"
+    },
+    "packaging": {
+      "retail_box": "$1.00 - $2.00",
+      "foam_insert": "$0.50",
+      "quick_start_guide": "$0.30",
+      "subtotal_packaging": "$1.80 - $2.80"
+    },
+    "total_cogs_estimates": {
+      "injection_molded_10k_units": "$31.50 - $47.00",
+      "3d_printed_100_units": "$74.00 - $91.80",
+      "note": "Does not include shipping, fulfillment, or margin"
+    }
+  },
+
+  "kickstarter_implications": {
+    "minimum_viable_backers_for_injection_molding": 500,
+    "rationale": "Tooling ($20K) amortized over 500 units = $40/unit premium vs 3D printing. Only economical above ~470 units.",
+
+    "recommended_manufacturing_strategy": {
+      "below_500_units": "Fulfill entirely with SLS 3D printing (no tooling risk)",
+      "500_to_1000_units": "3D print first 100 (fast delivery), order injection mold for remaining (12 week lead time)",
+      "above_1000_units": "Order injection mold immediately at campaign launch (tooling ROI justified)"
+    },
+
+    "stretch_goal_materials": [
+      {
+        "tier": "Standard",
+        "pledge": "$89",
+        "manufacturing": "SLS PA12 natural gray",
+        "knob": "Molded plastic with metallic paint",
+        "margin_target": "40%"
+      },
+      {
+        "tier": "Black Edition",
+        "pledge": "$99",
+        "manufacturing": "SLS PA12 dyed black",
+        "knob": "Molded plastic with metallic paint",
+        "margin_target": "45%"
+      },
+      {
+        "tier": "Premium Aluminum",
+        "pledge": "$149",
+        "manufacturing": "SLS PA12 dyed black",
+        "knob": "CNC machined aluminum 6061, anodized",
+        "additional_features": "Laser engraved serial number",
+        "margin_target": "50%"
+      }
+    ],
+
+    "early_bird_strategy": "3D printed beta units for first 50 backers (fast delivery, validates design)",
+
+    "timeline": {
+      "campaign_duration": "30 days",
+      "post_campaign_mold_ordering": "Day 31-35 (if >500 backers)",
+      "tooling_lead_time": "10-12 weeks",
+      "injection_molding_production": "2 weeks",
+      "assembly_and_qa": "2 weeks",
+      "shipping": "2-4 weeks",
+      "total_time_to_backer": "18-22 weeks post-campaign (injection molded)",
+      "total_time_to_backer_3d_print": "4-6 weeks post-campaign (if <500 backers)"
+    }
+  },
+
+  "manufacturability_score": {
+    "injection_molding": {
+      "overall_score": "9/10 (excellent)",
+      "geometry_complexity": "8/10 (simple, minimal undercuts if designed correctly)",
+      "tooling_cost": "8/10 (moderate, $20K for production mold)",
+      "per_unit_economics": "10/10 (excellent at scale, $5-8/unit)",
+      "risk_factors": "Low risk if design follows DFM guidelines"
+    },
+    "3d_printing_sls": {
+      "overall_score": "10/10 (excellent)",
+      "geometry_complexity": "10/10 (no limitations, powder self-supporting)",
+      "tooling_cost": "10/10 (zero tooling required)",
+      "per_unit_economics": "6/10 (good for low volume, expensive at scale)",
+      "risk_factors": "Zero risk, immediate production capability"
+    }
+  },
+
+  "decision_matrix": {
+    "if_kickstarter_goal_is_less_than_500_units": {
+      "recommended_manufacturing": "SLS 3D printing exclusively",
+      "rationale": "No tooling risk, faster time-to-market, lower total cost (no $20K tooling)",
+      "estimated_cogs": "$74 - $92 per unit (including housing + electronics + packaging)",
+      "target_retail_price": "$129 - $149",
+      "margin": "40-50%"
+    },
+    "if_kickstarter_goal_is_500_to_2000_units": {
+      "recommended_manufacturing": "Hybrid: 3D print first 100, injection mold remainder",
+      "rationale": "3D print for fast early delivery, injection mold pays for itself on remaining units",
+      "estimated_cogs": "$31.50 - $47 per unit (injection molded units)",
+      "target_retail_price": "$89 - $109",
+      "margin": "45-55%"
+    },
+    "if_kickstarter_goal_exceeds_2000_units": {
+      "recommended_manufacturing": "Injection molding for all units",
+      "rationale": "Tooling fully amortized, best per-unit economics, professional finish for all backers",
+      "estimated_cogs": "$31.50 - $47 per unit",
+      "target_retail_price": "$79 - $99",
+      "margin": "50-60%",
+      "consider": "Multi-cavity mold ($45K) if >10,000 units to double/triple production capacity"
+    }
+  },
+
+  "risk_assessment": {
+    "design_risks": [
+      {
+        "risk": "LCD bezel undercut requires expensive side action",
+        "likelihood": "Medium",
+        "impact": "High (+$5K tooling)",
+        "mitigation": "Use separate snap-fit bezel ring (eliminates undercut)"
+      },
+      {
+        "risk": "Thin walls may not fill completely in injection molding",
+        "likelihood": "Low",
+        "impact": "Medium (reject parts, rework mold)",
+        "mitigation": "Maintain 2mm minimum wall thickness"
+      },
+      {
+        "risk": "Snap fits too tight or too loose (tolerance stack-up)",
+        "likelihood": "Medium",
+        "impact": "Medium (assembly difficulty)",
+        "mitigation": "Prototype with 3D printing first, test snap fit clearances"
+      }
+    ],
+    "manufacturing_risks": [
+      {
+        "risk": "Tooling lead time delays Kickstarter fulfillment",
+        "likelihood": "Medium",
+        "impact": "High (backer dissatisfaction)",
+        "mitigation": "Order tooling immediately if campaign hits 500 backers, communicate realistic timelines"
+      },
+      {
+        "risk": "First article samples reveal design flaws (T1 tooling samples)",
+        "likelihood": "Medium",
+        "impact": "High (tooling revisions +$2K-5K, 2-4 week delay)",
+        "mitigation": "Thorough design review, mold flow analysis ($500-1000), 3D print prototypes first"
+      },
+      {
+        "risk": "3D printing vendor capacity insufficient for large order",
+        "likelihood": "Low",
+        "impact": "Medium (delivery delays)",
+        "mitigation": "Secure quotes from multiple vendors (Protolabs, Xometry, JLC3DP)"
+      }
+    ]
+  },
+
+  "recommended_next_steps": [
+    "1. Finalize CAD design following DFM guidelines from injection-molding-guide.md",
+    "2. Order 3D printed prototypes (SLS, 2-3 units) to validate form/fit/function",
+    "3. Test assembly with real PCB, encoder, LCD, membrane",
+    "4. Get injection mold quotes from 3+ vendors (include this evaluation template)",
+    "5. Optional: Order mold flow analysis ($500-1000) to predict defects before cutting steel",
+    "6. Make go/no-go decision on injection molding based on Kickstarter trajectory",
+    "7. If >500 backers: Order steel production mold immediately",
+    "8. If <500 backers: Fulfill with SLS 3D printing, save $20K tooling investment"
+  ],
+
+  "notes": "This template should be filled out for each design variation (Dimension 3). Different form factors will have vastly different manufacturing profiles. Example: a button-matrix design (Stream Deck style) has different tooling complexity than a rotary-centric design."
+}
