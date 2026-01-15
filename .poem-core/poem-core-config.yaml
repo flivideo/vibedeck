@@ -1,0 +1,124 @@
+# POEM Core Configuration
+#
+# ============================================================================
+# SINGLE SOURCE OF TRUTH FOR WORKSPACE PATHS
+# ============================================================================
+#
+# This configuration file defines where user-generated content is stored.
+# Workflows should NOT duplicate these paths - they inherit from here.
+#
+# Path Resolution Modes:
+# - Development (POEM_DEV=true): Uses dev-workspace/ at monorepo root
+# - Production (POEM_DEV not set): Uses poem/ in user's project root
+#
+# The config service (packages/poem-app/src/services/config/poem-config.ts)
+# reads these paths and provides the resolvePath() API for all components.
+# ============================================================================
+
+# Workspace directories - SINGLE SOURCE OF TRUTH
+# These paths are read by the config service.
+# Workflows should NOT duplicate these - they inherit from config.
+workspace:
+  # ============================================================================
+  # MULTI-WORKFLOW CONFIGURATION (Story 3.8+)
+  # ============================================================================
+  # Active workflow (leave undefined to use flat structure for backward compatibility)
+  currentWorkflow: youtube-launch-optimizer
+
+  # Workflow definitions - each workflow has its own prompts, schemas, and mock data
+  workflows:
+    youtube-launch-optimizer:
+      # Path to workflow-specific prompts directory
+      prompts: dev-workspace/workflows/youtube-launch-optimizer/prompts
+      # Path to workflow-specific schemas directory
+      schemas: dev-workspace/workflows/youtube-launch-optimizer/schemas
+      # Path to workflow-specific mock data directory
+      mockData: dev-workspace/workflows/youtube-launch-optimizer/mock-data
+      # Path to workflow-specific execution state directory
+      workflowData: dev-workspace/workflows/youtube-launch-optimizer/workflow-data
+      # Reference materials (array of sources)
+      reference:
+        - path: data/youtube-launch-optimizer/  # Local project reference materials
+          type: local                            # Type: 'local' or 'second-brain'
+          description: YouTube workflow example data
+          priority: 10                           # Conflict resolution priority (higher wins)
+        - path: /ad/brains/youtube/              # Second brain knowledge base
+          type: second-brain
+          description: Curated YouTube best practices
+          priority: 20
+
+    nano-banana:
+      prompts: dev-workspace/workflows/nano-banana/prompts
+      schemas: dev-workspace/workflows/nano-banana/schemas
+      mockData: dev-workspace/workflows/nano-banana/mock-data
+      workflowData: dev-workspace/workflows/nano-banana/workflow-data
+      reference:
+        - path: data/nano-banana/reference/
+          type: local
+          description: Nano Banana API docs and JSON prompting guide
+          priority: 10
+        - path: /ad/brains/nano-banana/
+          type: second-brain
+          description: Nano Banana best practices
+          priority: 20
+
+  # ============================================================================
+  # FLAT STRUCTURE (Backward Compatibility - used if currentWorkflow not set)
+  # ============================================================================
+  # Handlebars prompt templates (.hbs files)
+  prompts: dev-workspace/prompts
+  # JSON schema definitions for prompts
+  schemas: dev-workspace/schemas
+  # Generated mock data for testing
+  mockData: dev-workspace/mock-data
+  # User configuration files (providers, settings)
+  config: dev-workspace/config
+  # Persisted workflow execution state
+  workflowData: dev-workspace/workflow-data
+
+  # ============================================================================
+  # SHARED RESOURCES (Phase 2 - Story 4.9)
+  # ============================================================================
+  # Shared prompts and schemas accessible across all workflows (future)
+  # shared:
+  #   prompts: dev-workspace/shared/prompts
+  #   schemas: dev-workspace/shared/schemas
+
+# ============================================================================
+# PRODUCTION MODE PATH RESOLUTION (Automatic)
+# ============================================================================
+# When POEM_DEV is not set, the config service automatically adjusts paths:
+#   dev-workspace/ → poem/
+#
+# Examples:
+#   dev-workspace/workflows/youtube-launch-optimizer/prompts → poem/workflows/youtube-launch-optimizer/prompts
+#   dev-workspace/prompts → poem/prompts
+#
+# See: packages/poem-app/src/services/config/poem-config.ts for implementation
+# ============================================================================
+
+# ============================================================================
+# WORKFLOW COMMANDS (Story 3.8)
+# ============================================================================
+# Activate Penny agent to use workflow commands:
+#   /poem/agents/penny
+#
+# Available commands:
+#   *workflows       - List all defined workflows
+#   *switch <name>   - Switch to a different workflow
+#   *context         - Show current workflow info and reference paths
+#
+# See: docs/planning/course-corrections/2026-01-12-multi-workflow-architecture.md
+# ============================================================================
+
+# Logging configuration
+logging:
+  # Log level: debug | info | warn | error
+  level: info
+
+# Feature flags
+features:
+  # Enable hot-reload for Handlebars helpers during development
+  hotReload: true
+  # Enable mock data generation capabilities
+  mockDataGeneration: true

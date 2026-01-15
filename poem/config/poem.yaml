@@ -1,0 +1,13 @@
+# POEM Configuration
+# See documentation for available options
+
+version: "0.1.0"
+workspace: ./poem
+
+# Server settings (used by .poem-app)
+server:
+  port: 4321
+  host: localhost
+
+# Provider configurations
+providers: []
